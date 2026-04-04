@@ -3,21 +3,25 @@ import { motion } from "framer-motion";
 
 function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass py-4">
-      <div className="container mx-auto px-4 flex items-center justify-between">
-        <div className="text-xl font-semibold">OddBotix</div>
-        <nav className="hidden md:flex items-center gap-8">
-          <a href="#systems" className="hover:text-primary transition-colors">Systems</a>
-          <a href="#technology" className="hover:text-primary transition-colors">Technology</a>
-          <a href="#applications" className="hover:text-primary transition-colors">Applications</a>
-          <a href="#thesis" className="hover:text-primary transition-colors">Thesis</a>
-          <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+    <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/50">
+      <div className="container mx-auto px-6 flex items-center justify-between h-20">
+        <div className="text-xl font-medium tracking-tight">OddBotix</div>
+        <nav className="hidden md:flex items-center gap-10">
+          {['Systems', 'Technology', 'Applications', 'Thesis', 'Contact'].map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
+              {item}
+            </a>
+          ))}
         </nav>
         <a
           href="#contact"
-          className="px-6 py-2 rounded-full bg-primary text-background hover:bg-primary-hover transition-colors"
+          className="px-6 py-2.5 text-sm rounded-full bg-primary text-background hover:bg-primary-hover transition-colors font-medium"
         >
-          Request Access
+          Investor Briefing
         </a>
       </div>
     </header>
@@ -26,56 +30,67 @@ function Header() {
 
 function Hero() {
   return (
-    <section className="min-h-screen flex items-center gradient-bg">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="flex flex-col justify-center">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
+    <section className="min-h-[calc(100vh-5rem)] flex items-center gradient-bg">
+      <div className="container mx-auto px-6">
+        <div className="grid md:grid-cols-2 gap-16 md:gap-8 lg:gap-16">
+          <div className="flex flex-col justify-center space-y-6">
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-5xl md:text-6xl font-bold leading-tight"
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="text-5xl md:text-6xl lg:text-7xl font-medium leading-tight tracking-tight"
             >
-              Redefining Robotic Movement
+              <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                Movement Intelligence
+              </span>
+              <br />
+              For Autonomous Systems
             </motion.h1>
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-6 text-xl text-zinc-400"
+              transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className="text-lg md:text-xl text-zinc-400 max-w-xl"
             >
-              Venture-backed robotics company pioneering movement intelligence and adaptive architectures for high-risk environments.
+              OddBotix develops proprietary locomotion architectures that enable robots to operate in environments inaccessible to conventional systems.
             </motion.p>
-            <div className="mt-8 flex gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-wrap gap-4 mt-4"
+            >
               <a
                 href="#systems"
-                className="px-6 py-3 rounded-full bg-primary text-background hover:bg-primary-hover transition-colors"
+                className="px-6 py-3.5 text-sm rounded-full bg-primary text-background hover:bg-primary-hover transition-colors font-medium"
               >
-                Explore Systems
+                Technical Overview
               </a>
               <a
                 href="#contact"
-                className="px-6 py-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-background transition-colors"
+                className="px-6 py-3.5 text-sm rounded-full border border-primary/30 text-primary hover:bg-primary/5 transition-colors font-medium"
               >
-                Request Demo
+                Investor Materials
               </a>
-            </div>
+            </motion.div>
           </div>
           <div className="grid grid-cols-2 gap-4 mt-12 md:mt-0">
             {[
-              { title: "Patents Filed", value: "12+" },
-              { title: "Years in R&D", value: "5+" },
-              { title: "Field Tests", value: "200+" },
-              { title: "Locomotion Modes", value: "8+" }
+              { title: "Patents Pending", value: "14+" },
+              { title: "Core IP", value: "7 Generations" },
+              { title: "Field Testing", value: "300hrs+" },
+              { title: "Adaptive Modes", value: "10+" }
             ].map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.2 }}
-                className="p-6 glass rounded-lg hover-scale"
+                transition={{ duration: 0.6, delay: i * 0.15 }}
+                className="p-6 glass rounded-xl hover-zoom"
               >
-                <div className="text-2xl font-semibold">{item.value}</div>
+                <div className="text-3xl font-semibold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+                  {item.value}
+                </div>
                 <div className="mt-2 text-sm text-zinc-400">{item.title}</div>
               </motion.div>
             ))}

@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #050505;
+  --foreground: #f5f5f5;
   --primary: #00ff88;
-  --primary-hover: #00cc6a;
-  --secondary: #1a1a1a;
-  --tertiary: #262626;
-  --border: rgba(255,255,255,0.1);
+  --primary-hover: #00da78;
+  --secondary: #121212;
+  --tertiary: #1e1e1e;
+  --border: rgba(255,255,255,0.08);
+  --glow: 0 0 60px rgba(0,255,136,0.1);
 }
 
 @theme inline {
@@ -29,19 +30,34 @@ body {
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
   border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.glass:hover {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: var(--glow);
 }
 
 .gradient-bg {
-  background: radial-gradient(ellipse at top, rgba(0,255,136,0.1) 0%, transparent 60%);
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0,255,136,0.15) 0%, transparent 100%);
 }
 
-.hover-scale {
-  transition: transform 0.2s ease;
+.hover-zoom {
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
 }
 
-.hover-scale:hover {
-  transform: scale(1.02);
+.hover-zoom:hover {
+  transform: translateY(-4px);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fade-in 0.8s ease forwards;
 }
