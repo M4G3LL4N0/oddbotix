@@ -202,23 +202,152 @@ function Systems() {
 }
 
 function Technology() {
-  return <section id="technology" className="px-6 py-20">Technology</section>;
+  return (
+    <section id="technology" className="relative overflow-hidden px-6 py-28">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-16 text-center">
+          <h2 className="text-h1 glow">Motion Architecture</h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/60">
+            Proprietary frameworks for discovering and deploying novel locomotion
+          </p>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {architectureBlocks.map((block) => (
+            <div key={block.title} className="glass premium-card">
+              <h3 className="mb-4 text-xl font-medium text-white">{block.title}</h3>
+              <ul className="space-y-2 text-white/60">
+                {block.items.map((item) => (
+                  <li key={item} className="flex items-center">
+                    <ArrowRight className="mr-2 h-4 w-4 text-primary" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
 
 function Applications() {
-  return <section id="applications" className="px-6 py-20">Applications</section>;
+  return (
+    <section id="applications" className="relative px-6 py-28 gradient-bg">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-16 text-center">
+          <h2 className="text-h1 glow">Mission Profiles</h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/60">
+            Systems engineered for environments where conventional machines fail
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {applications.map((app) => (
+            <div key={app.title} className="glass rounded-xl p-8">
+              <h3 className="mb-3 text-xl font-medium text-white">{app.title}</h3>
+              <p className="text-white/60">{app.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
 
 function Thesis() {
-  return <section id="thesis" className="px-6 py-20">Thesis</section>;
+  return (
+    <section id="thesis" className="relative px-6 py-28">
+      <div className="mx-auto max-w-7xl">
+        <div className="glass premium-card p-12">
+          <div className="grid gap-12 md:grid-cols-2">
+            <div>
+              <h2 className="text-h1 glow">Movement Intelligence</h2>
+              <p className="mt-6 text-lg text-white/60">
+                The next frontier in robotics isn't better sensors or stronger actuators - 
+                it's fundamentally new ways for machines to move through the world.
+              </p>
+            </div>
+            <div className="space-y-6">
+              <div className="flex items-start">
+                <div className="mr-4 mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <Radar className="h-4 w-4" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium text-white">Beyond Wheels & Tracks</h3>
+                  <p className="mt-1 text-white/60">
+                    We develop movement strategies that break conventional assumptions.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="mr-4 mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <ScanLine className="h-4 w-4" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium text-white">Adaptive Body Logic</h3>
+                  <p className="mt-1 text-white/60">
+                    Machines that reconfigure their geometry and posture mid-mission.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 function FinalCta() {
-  return <section id="contact" className="px-6 py-20">Contact</section>;
+  return (
+    <section id="contact" className="relative px-6 py-28 gradient-bg">
+      <div className="mx-auto max-w-3xl text-center">
+        <h2 className="text-h1 glow">Pioneering Movement Intelligence</h2>
+        <p className="mx-auto mt-6 text-lg text-white/60">
+          OddBotix is developing the next generation of robotic locomotion architectures.
+          Join our early access program for mission partners and investors.
+        </p>
+        <div className="mt-10">
+          <a
+            href="#"
+            className="inline-flex items-center rounded-full bg-primary px-8 py-4 text-lg font-medium text-black transition hover:bg-primary-hover"
+          >
+            Request Access
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 function Footer() {
-  return <footer className="px-6 py-10 text-white/40">OddBotix</footer>;
+  return (
+    <footer className="border-t border-white/10 px-6 py-12 text-white/40">
+      <div className="mx-auto max-w-7xl">
+        <div className="flex flex-col items-center justify-between md:flex-row">
+          <div className="mb-6 md:mb-0">
+            <span className="text-white">OddBotix</span>
+            <span className="mx-2">•</span>
+            <span>Pioneering Movement Intelligence</span>
+          </div>
+          <div className="flex space-x-6">
+            <a href="#" className="transition hover:text-white/80">
+              Privacy
+            </a>
+            <a href="#" className="transition hover:text-white/80">
+              Terms
+            </a>
+            <a href="#" className="transition hover:text-white/80">
+              Contact
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 }
 
 function BackgroundLayers() {

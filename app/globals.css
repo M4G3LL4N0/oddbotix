@@ -126,8 +126,32 @@ body {
 
 /* Section spacing */
 .section-spacing {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+/* Enhanced glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  transition: all 0.3s ease;
+}
+
+.glass:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient background enhancement */
+.gradient-bg {
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 255, 136, 0.1) 0%, transparent 100%);
+}
+
+/* Premium card hover effect */
+.premium-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 80px -10px rgba(0, 255, 136, 0.15);
 }
 
 /* Mobile-first spacing */
