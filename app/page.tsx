@@ -1,17 +1,20 @@
 import { ArrowRight, Move3d, Gauge, Shield, Settings2, Factory } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/50">
-      <div className="container mx-auto px-6 flex items-center justify-between h-20">
-        <div className="text-xl font-medium tracking-tight">OddBotix</div>
-        <nav className="hidden md:flex items-center gap-10">
+    <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/40 backdrop-blur-sm">
+      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" className="text-xl font-extrabold tracking-tight">
+          OddBotix
+        </a>
+        <nav className="hidden md:flex items-center gap-12">
           {['Systems', 'Technology', 'Applications', 'Thesis', 'Contact'].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium text-zinc-300 hover:text-primary transition-colors"
             >
               {item}
             </a>
@@ -19,7 +22,7 @@ function Header() {
         </nav>
         <a
           href="#contact"
-          className="px-6 py-2.5 text-sm rounded-full bg-primary text-background hover:bg-primary-hover transition-colors font-medium"
+          className="hidden md:inline-block px-8 py-2.5 rounded-full bg-primary text-background hover:bg-primary-hover transition-colors font-medium"
         >
           Investor Briefing
         </a>
@@ -30,72 +33,64 @@ function Header() {
 
 function Hero() {
   return (
-    <section className="min-h-[calc(100vh-5rem)] flex items-center gradient-bg">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 md:gap-8 lg:gap-16">
-          <div className="flex flex-col justify-center space-y-6">
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl md:text-6xl lg:text-7xl font-medium leading-tight tracking-tight"
-            >
-              <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                Movement Intelligence
-              </span>
-              <br />
-              For Autonomous Systems
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="text-lg md:text-xl text-zinc-400 max-w-xl"
-            >
-              OddBotix develops proprietary locomotion architectures that enable robots to operate in environments inaccessible to conventional systems.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-wrap gap-4 mt-4"
-            >
-              <a
-                href="#systems"
-                className="px-6 py-3.5 text-sm rounded-full bg-primary text-background hover:bg-primary-hover transition-colors font-medium"
-              >
-                Technical Overview
-              </a>
-              <a
-                href="#contact"
-                className="px-6 py-3.5 text-sm rounded-full border border-primary/30 text-primary hover:bg-primary/5 transition-colors font-medium"
-              >
-                Investor Materials
-              </a>
-            </motion.div>
-          </div>
-          <div className="grid grid-cols-2 gap-4 mt-12 md:mt-0">
-            {[
-              { title: "Patents Pending", value: "14+" },
-              { title: "Core IP", value: "7 Generations" },
-              { title: "Field Testing", value: "300hrs+" },
-              { title: "Adaptive Modes", value: "10+" }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
-                className="p-6 glass rounded-xl hover-zoom"
-              >
-                <div className="text-3xl font-semibold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-                  {item.value}
-                </div>
-                <div className="mt-2 text-sm text-zinc-400">{item.title}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+    <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden">
+      {/* Subtle motion background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-25">
+        <motion.svg
+          animate={{ rotation: 360 }}
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          width={200}
+          height={200}
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="48"
+            stroke="rgba(255,255,255,0.2)"
+            strokeWidth="4"
+            fill="none"
+          />
+        </motion.svg>
+      </div>
+
+      <div className="container mx-auto px-6 flex flex-col items-center text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-h1 mb-4 tracking-tight"
+        >
+          <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+            Movement Intelligence
+          </span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="max-w-2xl text-lg md:text-xl text-zinc-300 mt-3"
+        >
+          We engineer adaptive locomotion architectures that empower robots to thrive where conventional systems falter.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="mt-8 flex flex-col sm:flex-row gap-4 justify-center"
+        >
+          <a
+            href="#systems"
+            className="inline-block px-9 py-3 rounded-full bg-primary text-background hover:bg-primary-hover transition-colors font-medium"
+          >
+            Technical Deep‑Dive
+          </a>
+          <a
+            href="#contact"
+            className="inline-block px-9 py-3 rounded-full border border-primary/40 text-primary hover:bg-primary/5 transition-colors font-medium"
+          >
+            Investor Pack
+          </a>
+        </motion.div>
       </div>
     </section>
   );
@@ -103,53 +98,46 @@ function Hero() {
 
 function SectionTitle({ title, subtitle }: { title: string; subtitle: string }) {
   return (
-    <div className="text-center">
-      <h2 className="text-3xl md:text-4xl font-bold">{title}</h2>
-      <p className="mt-4 text-lg text-zinc-400 max-w-2xl mx-auto">{subtitle}</p>
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-primary">{title}</h2>
+      <p className="mt-3 text-lg text-zinc-300 max-w-2xl mx-auto">{subtitle}</p>
     </div>
+  );
+}
+
+function PremiumCard({ children, icon }: { children: React.ReactNode; icon: React.ReactNode }) {
+  return (
+    <motion.div
+      whileHover={{ scale: 1.03, y: -4 }}
+      className="premium-card p-6 rounded-xl backdrop-blur-sm"
+    >
+      {icon}
+      <div className="mt-4">{children}</div>
+    </motion.div>
   );
 }
 
 function Systems() {
   return (
-    <section id="systems" className="py-24">
-      <div className="container mx-auto px-4">
+    <section id="systems" className="py-28">
+      <div className="container mx-auto px-6">
         <SectionTitle
           title="Core Systems"
-          subtitle="Our proprietary architectures enable unprecedented mobility in complex environments"
+          subtitle="Proprietary architectures that deliver unprecedented mobility across unstructured terrains"
         />
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-10 mt-16">
           {[
-            {
-              icon: Move3d,
-              title: "Abnormal Locomotion",
-              description: "Multi-modal movement capabilities for unstructured terrain"
-            },
-            {
-              icon: Gauge,
-              title: "Adaptive Structures",
-              description: "Reconfigurable body architectures for dynamic environments"
-            },
-            {
-              icon: Shield,
-              title: "Confined-Space Intelligence",
-              description: "Autonomous navigation in constrained spaces"
-            },
-            {
-              icon: Settings2,
-              title: "Motion Engine",
-              description: "Real-time movement optimization and control"
-            }
+
+            { icon: Move3d, title: "Abnormal Locomotion", description: "Multi‑modal movement capabilities for chaotic environments" },
+
+            { icon: Gauge, title: "Adaptive Structures", description: "Reconfigurable bodies that evolve with mission demands" },
+
+            { icon: Shield, title: "Confined‑Space Intelligence", description: "Autonomous navigation in tight, hazardous spaces" },
+
+            { icon: Settings2, title: "Motion Engine", description: "Real‑time optimization of movement dynamics" }
+
           ].map((item, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ y: -5 }}
-              className="p-8 glass rounded-lg hover-scale"
-            >
-              <item.icon className="w-8 h-8 text-primary" />
-              <h3 className="mt-6 text-xl font-semibold">{item.title}</h3>
-              <p className="mt-2 text-zinc-400">{item.description}</p>
-            </motion.div>
+            <PremiumCard key={i} icon={<item.icon className="w-10 h-10 text-primary" />} title={item.title} description={item.description} />
           ))}
         </div>
       </div>
@@ -159,35 +147,44 @@ function Systems() {
 
 function Technology() {
   return (
-    <section id="technology" className="py-24 bg-secondary">
-      <div className="container mx-auto px-4">
-        <SectionTitle
-          title="Motion Intelligence"
-          subtitle="Our proprietary control layer enables seamless simulation-to-field deployment"
+    <section id="technology" className="py-28 bg-secondary">
+      <div className="container mx-auto px-6">
+        <SectionTitle          title="Motion Intelligence"
+          subtitle="A control layer that fuses machine learning with physics‑based simulation for field‑ready performance"
         />
-        <div className="mt-16 grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12 mt-16">
           <div className="space-y-8">
             <div className="p-8 glass rounded-lg">
               <h3 className="text-xl font-semibold">Adaptive Control</h3>
-              <p className="mt-2 text-zinc-400">
-                Real-time movement optimization using machine learning and physics-based models
+              <p className="text-zinc-300">
+                Seamless integration of real‑time learning and deterministic physics ensures robust operation across diverse scenarios.
               </p>
             </div>
             <div className="p-8 glass rounded-lg">
               <h3 className="text-xl font-semibold">Field Intelligence</h3>
-              <p className="mt-2 text-zinc-400">
-                Autonomous decision making in dynamic, unstructured environments
+              <p className="text-zinc-300">
+                Autonomous decision‑making that thrives in dynamic, unstructured environments without human intervention.
               </p>
             </div>
             <div className="p-8 glass rounded-lg">
               <h3 className="text-xl font-semibold">Simulation Pipeline</h3>
-              <p className="mt-2 text-zinc-400">
-                High-fidelity simulation environment for rapid prototyping and testing
+              <p className="text-zinc-300">
+                High‑fidelity, physics‑accurate simulation that accelerates prototyping and reduces field‑testing cycles.
               </p>
             </div>
           </div>
-          <div className="p-8 glass rounded-lg">
-            <div className="aspect-video bg-tertiary rounded-lg"></div>
+          <div className="relative flex items-center justify-center">
+            <div className="aspect-video bg-tertiary rounded-lg overflow-hidden shadow-lg">
+              <video
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                src="/video/technology.mp4"
+                alt="Robotics simulation"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -197,46 +194,22 @@ function Technology() {
 
 function Applications() {
   return (
-    <section id="applications" className="py-24">
-      <div className="container mx-auto px-4">
+    <section id="applications" className="py-28">
+      <div className="container mx-auto px-6">
         <SectionTitle
           title="Applications"
-          subtitle="Our systems are transforming industries where conventional robotics fail"
+          subtitle="Our systems redefine what robotics can achieve in the most demanding sectors"
         />
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-          {[
-            {
-              icon: Factory,
-              title: "Industrial Inspection",
-              description: "Autonomous inspection in hazardous industrial environments"
-            },
-            {
-              icon: Shield,
-              title: "Disaster Response",
-              description: "Search and rescue operations in collapsed structures"
-            },
-            {
-              icon: Settings2,
-              title: "Defense Reconnaissance",
-              description: "Stealthy reconnaissance in complex terrain"
-            },
-            {
-              icon: Move3d,
-              title: "Subterranean Systems",
-              description: "Autonomous navigation in underground environments"
-            }
+        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-10 mt-16">
+          {[            { icon: Factory, title: "Industrial Inspection", description: "Autonomous inspection of hazardous infrastructure with zero‑risk exposure" },
+
+            { icon: Shield, title: "Disaster Response", description: "Search‑and‑rescue capabilities in collapsed structures and unstable terrain" },
+
+            { icon: Settings2, title: "Defense Reconnaissance", description: "Stealthy, adaptive platforms for covert surveillance" }
+
           ].map((item, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ y: -5 }}
-              className="p-8 glass rounded-lg hover-scale"
-            >
-              <item.icon className="w-8 h-8 text-primary" />
-              <h3 className="mt-6 text-xl font-semibold">{item.title}</h3>
-              <p className="mt-2 text-zinc-400">{item.description}</p>
-            </motion.div>
+            <PremiumCard key={i} icon={<item.icon className="w-10 h-10 text-primary" />} title={item.title} description={item.description} />
           ))}
-        </div>
       </div>
     </section>
   );
@@ -244,29 +217,29 @@ function Applications() {
 
 function Thesis() {
   return (
-    <section id="thesis" className="py-24 bg-secondary">
-      <div className="container mx-auto px-4">
+    <section id="thesis" className="py-28 bg-secondary">
+      <div className="container mx-auto px-6">
         <SectionTitle
           title="Venture Thesis"
-          subtitle="The future of robotics will be defined by movement intelligence and body adaptability"
+          subtitle="The future of robotics is defined by movement intelligence and adaptive architectures"
         />
         <div className="mt-16 max-w-3xl mx-auto space-y-8">
           <div className="p-8 glass rounded-lg">
             <h3 className="text-xl font-semibold">Movement Intelligence</h3>
-            <p className="mt-2 text-zinc-400">
-              We believe that the next frontier in robotics is not just about AI, but about how machines move and adapt to their environment. Our focus on movement intelligence enables robots to operate in environments where traditional systems fail.
+            <p className="text-zinc-300">
+              We contend that true robotic advancement lies not merely in artificial intelligence, but in the capacity to move intelligently and adapt physically to complex environments.
             </p>
           </div>
           <div className="p-8 glass rounded-lg">
             <h3 className="text-xl font-semibold">Adaptive Architectures</h3>
-            <p className="mt-2 text-zinc-400">
-              The ability to dynamically reconfigure a robot's physical structure allows for unprecedented versatility. Our adaptive architectures enable a single platform to perform multiple functions across diverse environments.
+            <p className="text-zinc-300">
+              Our modular, reconfigurable designs enable a single platform to execute diverse missions, dramatically reducing total cost of ownership.
             </p>
           </div>
           <div className="p-8 glass rounded-lg">
-            <h3 className="text-xl font-semibold">Field-Ready Systems</h3>
-            <p className="mt-2 text-zinc-400">
-              We bridge the gap between simulation and real-world deployment, ensuring our systems are robust and reliable in the most challenging conditions.
+            <h3 className="text-xl font-semibold">Field‑Ready Systems</h3>
+            <p className="text-zinc-300">
+              From simulation to real‑world deployment, our systems are engineered for reliability, durability, and immediate operational impact.
             </p>
           </div>
         </div>
@@ -277,29 +250,29 @@ function Thesis() {
 
 function CTA() {
   return (
-    <section className="py-24 gradient-bg">
-      <div className="container mx-auto px-4">
-        <div className="text-center">
-          <h2 className="text-4xl font-bold">Ready to Transform Robotic Movement?</h2>
-          <p className="mt-4 text-xl text-zinc-400 max-w-2xl mx-auto">
-            Explore how OddBotix can revolutionize your operations with adaptive robotics
-          </p>
-          <div className="mt-8 flex gap-4 justify-center">
-            <a
-              href="#contact"
-              className="px-6 py-3 rounded-full bg-primary text-background hover:bg-primary-hover transition-colors"
-            >
-              Request Demo
-            </a>
-            <a
-              href="https://noaerth.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-background transition-colors"
-            >
-              Learn About Noaerth
-            </a>
-          </div>
+    <section className="py-28 gradient-bg">
+      <div className="container mx-auto px-6 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          Partner with the Leaders in Adaptive Robotics
+        </h2>
+        <p className="text-lg md:text-xl text-zinc-300 max-w-2xl mx-auto mb-8">
+          Invest in a technology stack that delivers unparalleled mobility, reduces operational risk, and opens new market opportunities.
+        </p>
+        <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#contact"
+            className="inline-block px-10 py-3 rounded-full bg-primary text-background hover:bg-primary-hover transition-colors font-medium"
+          >
+            Schedule Briefing
+          </a>
+          <a
+            href="https://noaerth.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-10 py-3 rounded-full border border-primary/40 text-primary hover:bg-primary/5 transition-colors font-medium"
+          >
+            Noaerth Ecosystem
+          </a>
         </div>
       </div>
     </section>
@@ -308,13 +281,11 @@ function CTA() {
 
 function Footer() {
   return (
-    <footer className="py-12 border-t border-border">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="text-xl font-semibold">OddBotix</div>
-          <div className="mt-4 md:mt-0 text-sm text-zinc-400">
-            © {new Date().getFullYear()} OddBotix. Part of the Noaerth ecosystem.
-          </div>
+    <footer className="py-16 border-t border-border">
+      <div className="container mx-auto px-6 text-center">
+        <div className="text-2xl font-semibold">OddBotix</div>
+        <div className="mt-4 text-sm text-zinc-300">
+          © {new Date().getFullYear()} OddBotix. All rights reserved.
         </div>
       </div>
     </footer>
@@ -323,7 +294,7 @@ function Footer() {
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col min-h-screen">
       <Header />
       <Hero />
       <Systems />

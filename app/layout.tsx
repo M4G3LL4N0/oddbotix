@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "OddBotix - The Future of Robotic Movement",
-  description: "Venture-backed robotics company pioneering movement intelligence and adaptive architectures",
+  title: "OddBotix - Pioneering Movement Intelligence",
+  description: "Venture‑backed robotics company developing adaptive locomotion architectures for unstructured environments",
 };
 
 export default function RootLayout({
@@ -27,7 +27,9 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-screen flex flex-col bg-background text-foreground transition-all">
+        {children}
+      </body>
     </html>
   );
 }
