@@ -355,6 +355,8 @@ function BackgroundLayers() {
 
 function HeroPanel() {
   return (
-    <div className="h-[300px] rounded-2xl border border-white/10 bg-white/5" />
+    <div className="h-[300px] rounded-2xl border border-white/10 bg-white/5">
+      {/* Hero panel content */}
+    </div>
   );
 }

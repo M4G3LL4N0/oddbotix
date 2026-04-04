@@ -157,5 +157,9 @@ function ThesisPoint({
 }
 
 function BackgroundLayers() {
-  return <div className="fixed inset-0 -z-10 bg-black" />;
+  return (
+    <div className="fixed inset-0 -z-10 bg-black">
+      {/* Background layers content */}
+    </div>
+  );
 }
