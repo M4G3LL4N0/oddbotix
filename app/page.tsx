@@ -257,7 +257,7 @@ function ApplicationsPreview() {
 
 function ThesisPreview() {
   return (
-    <section id="thesis" className="relative px-6 py-28">
+    <section id="thesis" className="relative px-6 py-32">
       <div className="mx-auto max-w-7xl">
         <div className="glass premium-card p-12">
           <div className="grid gap-12 md:grid-cols-2">
@@ -268,7 +268,7 @@ function ThesisPreview() {
                 it's fundamentally new ways for machines to move through the world.
               </p>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-8">
               <div className="flex items-start">
                 <div className="mr-4 mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <Radar className="h-4 w-4" />
@@ -301,7 +301,7 @@ function ThesisPreview() {
 
 function FinalCta() {
   return (
-    <section id="contact" className="relative px-6 py-28 gradient-bg">
+    <section id="contact" className="relative px-6 py-32 gradient-bg">
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="text-h1 glow">Pioneering Movement Intelligence</h2>
         <p className="mx-auto mt-6 text-lg text-white/60">
@@ -311,7 +311,7 @@ function FinalCta() {
         <div className="mt-10">
           <a
             href="#"
-            className="inline-flex items-center rounded-full bg-primary px-8 py-4 text-lg font-medium text-black transition hover:bg-primary-hover"
+            className="inline-flex items-center rounded-full bg-primary px-8 py-4 text-lg font-medium text-black transition hover:bg-primary-hover hover:shadow-glow-hover"
           >
             Request Access
             <ArrowRight className="ml-2 h-5 w-5" />
@@ -324,7 +324,7 @@ function FinalCta() {
 
 function Footer() {
   return (
-    <footer className="border-t border-white/10 px-6 py-12 text-white/40">
+    <footer className="border-t border-white/10 px-6 py-16 text-white/40">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col items-center justify-between md:flex-row">
           <div className="mb-6 md:mb-0">
@@ -332,17 +332,20 @@ function Footer() {
             <span className="mx-2">•</span>
             <span>Pioneering Movement Intelligence</span>
           </div>
-          <div className="flex space-x-6">
-            <a href="#" className="transition hover:text-white/80">
+          <div className="flex space-x-8">
+            <a href="#" className="transition hover:text-white/80 hover:underline">
               Privacy
             </a>
-            <a href="#" className="transition hover:text-white/80">
+            <a href="#" className="transition hover:text-white/80 hover:underline">
               Terms
             </a>
-            <a href="#" className="transition hover:text-white/80">
+            <a href="#" className="transition hover:text-white/80 hover:underline">
               Contact
             </a>
           </div>
+        </div>
+        <div className="mt-8 text-center text-sm text-white/30 md:text-left">
+          © {new Date().getFullYear()} OddBotix. All rights reserved.
         </div>
       </div>
     </footer>
