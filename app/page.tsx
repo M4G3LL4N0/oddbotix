@@ -127,9 +127,9 @@ export default function HomePage() {
 
       <Hero />
       <Systems />
-      <Technology />
-      <Applications />
-      <Thesis />
+      <ApplicationsPreview />
+      <TechnologyPreview />
+      <ThesisPreview />
       <FinalCta />
       <Footer />
     </main>
@@ -200,7 +200,7 @@ function Systems() {
   );
 }
 
-function Technology() {
+function TechnologyPreview() {
   return (
     <section id="technology" className="relative overflow-hidden px-6 py-28">
       <div className="mx-auto max-w-7xl">
@@ -231,7 +231,7 @@ function Technology() {
   );
 }
 
-function Applications() {
+function ApplicationsPreview() {
   return (
     <section id="applications" className="relative px-6 py-28 gradient-bg">
       <div className="mx-auto max-w-7xl">
@@ -255,7 +255,7 @@ function Applications() {
   );
 }
 
-function Thesis() {
+function ThesisPreview() {
   return (
     <section id="thesis" className="relative px-6 py-28">
       <div className="mx-auto max-w-7xl">

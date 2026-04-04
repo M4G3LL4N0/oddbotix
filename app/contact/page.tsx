@@ -36,9 +36,9 @@ export default function ContactPage() {
               transition={{ duration: 0.7 }}
               className="mb-16"
             >
-              <h1 className="text-h1 glow">Strategic Partnerships</h1>
+              <h1 className="text-h1 glow">Strategic Collaboration</h1>
               <p className="mt-6 max-w-3xl text-lg text-white/60">
-                OddBotix works with select mission partners and investors to deploy our technology.
+                OddBotix works with select mission partners, investors, and Noaerth ecosystem companies to deploy our motion intelligence technology in high-value environments.
               </p>
             </motion.div>
 

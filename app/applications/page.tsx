@@ -36,9 +36,9 @@ export default function ApplicationsPage() {
               transition={{ duration: 0.7 }}
               className="mb-16"
             >
-              <h1 className="text-h1 glow">Mission Profiles</h1>
+              <h1 className="text-h1 glow">Strategic Deployment</h1>
               <p className="mt-6 max-w-3xl text-lg text-white/60">
-                Systems engineered for environments where conventional machines fail.
+                OddBotix systems are engineered for high-value missions where conventional machines fail. Our technology creates asymmetric advantage in constrained, hazardous, and information-poor environments.
               </p>
             </motion.div>
 

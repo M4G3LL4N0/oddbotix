@@ -36,9 +36,9 @@ export default function ThesisPage() {
               transition={{ duration: 0.7 }}
               className="mb-16"
             >
-              <h1 className="text-h1 glow">Movement Intelligence</h1>
+              <h1 className="text-h1 glow">The Movement Intelligence Thesis</h1>
               <p className="mt-6 max-w-3xl text-lg text-white/60">
-                The next frontier in robotics isn't better sensors or stronger actuators - it's fundamentally new ways for machines to move through the world.
+                Conventional robotics has plateaued in its ability to operate in unstructured environments. The next frontier isn't better sensors or stronger actuators - it's fundamentally new ways for machines to move through the world.
               </p>
             </motion.div>
 

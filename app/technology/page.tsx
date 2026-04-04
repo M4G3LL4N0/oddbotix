@@ -36,9 +36,9 @@ export default function TechnologyPage() {
               transition={{ duration: 0.7 }}
               className="mb-16"
             >
-              <h1 className="text-h1 glow">Motion Intelligence Stack</h1>
+              <h1 className="text-h1 glow">Motion Intelligence Architecture</h1>
               <p className="mt-6 max-w-3xl text-lg text-white/60">
-                Proprietary frameworks for discovering and deploying novel locomotion in constrained environments.
+                Proprietary frameworks for discovering and deploying novel locomotion in constrained environments. Our stack enables machines to move in ways that should not work.
               </p>
             </motion.div>
 
