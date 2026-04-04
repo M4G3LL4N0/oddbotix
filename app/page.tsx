@@ -6,7 +6,7 @@ function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/40 backdrop-blur-sm">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" className="text-xl font-extrabold tracking-tight">
+        <a href="/" className="text-3xl font-extrabold tracking-tight">
           OddBotix
         </a>
         <nav className="hidden md:flex items-center gap-12">
@@ -34,13 +34,13 @@ function Header() {
 function Hero() {
   return (
     <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden">
-      {/* Subtle motion background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-25">
+      {/* Cinematic gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/15 to-primary/25 opacity-40">
         <motion.svg
           animate={{ rotation: 360 }}
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-          width={200}
-          height={200}
+          width={240}
+          height={240}
         >
           <circle
             cx="50"
@@ -57,7 +57,7 @@ function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-h1 mb-4 tracking-tight"
+          className="text-h1 glow mb-4 tracking-tight"
         >
           <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
             Movement Intelligence
@@ -67,9 +67,9 @@ function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          className="max-w-2xl text-lg md:text-xl text-zinc-300 mt-3"
+          className="max-w-2xl text-lg md:text-xl text-zinc-300 mt-3 investor-copy"
         >
-          We engineer adaptive locomotion architectures that empower robots to thrive where conventional systems falter.
+          We engineer adaptive locomotion architectures that empower robots to thrive where conventional systems falter, delivering unmatched mobility in the most demanding environments.
         </motion.p>
 
         <motion.div
@@ -99,8 +99,8 @@ function Hero() {
 function SectionTitle({ title, subtitle }: { title: string; subtitle: string }) {
   return (
     <div className="text-center mb-12">
-      <h2 className="text-3xl md:text-4xl font-bold text-primary">{title}</h2>
-      <p className="mt-3 text-lg text-zinc-300 max-w-2xl mx-auto">{subtitle}</p>
+      <h2 className="text-4xl md:text-5xl font-bold text-primary mb-2">{title}</h2>
+      <p className="mt-2 text-lg md:text-xl text-zinc-300 max-w-2xl mx-auto">{subtitle}</p>
     </div>
   );
 }
@@ -119,7 +119,7 @@ function PremiumCard({ children, icon }: { children: React.ReactNode; icon: Reac
 
 function Systems() {
   return (
-    <section id="systems" className="py-28">
+    <section id="systems" className="section-spacing py-32">
       <div className="container mx-auto px-6">
         <SectionTitle
           title="Core Systems"
@@ -147,9 +147,10 @@ function Systems() {
 
 function Technology() {
   return (
-    <section id="technology" className="py-28 bg-secondary">
+    <section id="technology" className="section-spacing py-32 bg-secondary">
       <div className="container mx-auto px-6">
-        <SectionTitle          title="Motion Intelligence"
+        <SectionTitle
+          title="Motion Intelligence"
           subtitle="A control layer that fuses machine learning with physics‑based simulation for field‑ready performance"
         />
         <div className="grid md:grid-cols-2 gap-12 mt-16">
@@ -177,11 +178,9 @@ function Technology() {
             <div className="aspect-video bg-tertiary rounded-lg overflow-hidden shadow-lg">
               <video
                 className="w-full h-full object-cover"
-                autoPlay
-                muted
+                autoPlay                muted
                 loop
-                playsInline
-                src="/video/technology.mp4"
+                playsInline                src="/video/technology.mp4"
                 alt="Robotics simulation"
               />
             </div>
@@ -194,7 +193,7 @@ function Technology() {
 
 function Applications() {
   return (
-    <section id="applications" className="py-28">
+    <section id="applications" className="section-spacing py-32">
       <div className="container mx-auto px-6">
         <SectionTitle
           title="Applications"
@@ -217,7 +216,7 @@ function Applications() {
 
 function Thesis() {
   return (
-    <section id="thesis" className="py-28 bg-secondary">
+    <section id="thesis" className="section-spacing py-32 bg-secondary">
       <div className="container mx-auto px-6">
         <SectionTitle
           title="Venture Thesis"
@@ -250,18 +249,18 @@ function Thesis() {
 
 function CTA() {
   return (
-    <section className="py-28 gradient-bg">
+    <section className="section-spacing py-32 gradient-bg">
       <div className="container mx-auto px-6 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <h2 className="text-5xl md:text-6xl font-bold mb-4">
           Partner with the Leaders in Adaptive Robotics
         </h2>
         <p className="text-lg md:text-xl text-zinc-300 max-w-2xl mx-auto mb-8">
-          Invest in a technology stack that delivers unparalleled mobility, reduces operational risk, and opens new market opportunities.
+          Invest in a technology stack that delivers unparalleled mobility, reduces operational risk, and opens new market opportunities for the next generation of autonomous systems.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#contact"
-            className="inline-block px-10 py-3 rounded-full bg-primary text-background hover:bg-primary-hover transition-colors font-medium"
+            className="inline-block px-12 py-3 rounded-full bg-primary text-background hover:bg-primary-hover transition-colors font-medium"
           >
             Schedule Briefing
           </a>
@@ -269,7 +268,7 @@ function CTA() {
             href="https://noaerth.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-10 py-3 rounded-full border border-primary/40 text-primary hover:bg-primary/5 transition-colors font-medium"
+            className="inline-block px-12 py-3 rounded-full border border-primary/40 text-primary hover:bg-primary/5 transition-colors font-medium"
           >
             Noaerth Ecosystem
           </a>
@@ -283,7 +282,7 @@ function Footer() {
   return (
     <footer className="py-16 border-t border-border">
       <div className="container mx-auto px-6 text-center">
-        <div className="text-2xl font-semibold">OddBotix</div>
+        <div className="text-3xl font-semibold">OddBotix</div>
         <div className="mt-4 text-sm text-zinc-300">
           © {new Date().getFullYear()} OddBotix. All rights reserved.
         </div>
