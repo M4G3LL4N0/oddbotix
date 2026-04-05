@@ -5,15 +5,15 @@ import { ArrowRight, ChartNoAxesCombined, Cpu, Factory, Shield, Waypoints } from
 
 const marketSegments = [
   {
-    title: "Industrial Systems",
+    title: "Industrial Automation",
     description:
-      "Inspection, constrained access, facility intelligence, and robotic operation in difficult built environments.",
+      "Next-gen inspection and operations in high-value facilities with constrained access, hazardous conditions, or complex geometries.",
     icon: Factory,
   },
   {
-    title: "Defense & Strategic Reconnaissance",
+    title: "Defense & Security",
     description:
-      "Adaptive robotic systems for uncertain terrain, hard-access geometry, and operational intelligence capture.",
+      "Mission-critical systems for contested environments where terrain adaptability and operational resilience dominate capability requirements.",
     icon: Shield,
   },
   {
@@ -41,9 +41,9 @@ const pillars = [
       "Simulation, reinforcement learning, embedded compute, and sensing have advanced enough to make new movement categories commercially viable.",
   },
   {
-    title: "Platform Potential",
+    title: "Platform Expansion",
     copy:
-      "The long-term opportunity is not just hardware units. It is a broader motion stack: systems, control logic, learning loops, and future licensing or OEM integration.",
+      "Beyond hardware systems, we're building a motion intelligence layer - control policies, simulation environments, and learning architectures that will define next-gen robotic movement.",
   },
 ];
 
@@ -93,7 +93,7 @@ export default function InvestorsPage() {
             transition={{ duration: 0.65 }}
             className="inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.24em] text-cyan-200"
           >
-            Investors
+            Venture Opportunity
           </motion.div>
 
           <motion.h1
@@ -102,7 +102,7 @@ export default function InvestorsPage() {
             transition={{ duration: 0.75, delay: 0.06 }}
             className="mt-8 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl"
           >
-            A new category in robotics starts with movement intelligence.
+            The next control frontier in robotics starts with movement.
           </motion.h1>
 
           <motion.p
@@ -111,9 +111,9 @@ export default function InvestorsPage() {
             transition={{ duration: 0.75, delay: 0.12 }}
             className="mt-8 max-w-3xl text-lg leading-8 text-white/68 sm:text-xl"
           >
-            OddBotix is being built as a premium deep-tech robotics venture focused
-            on abnormal locomotion, adaptive machine movement, and high-complexity
-            environments where conventional systems are structurally limited.
+            OddBotix is commercializing adaptive robotic architectures for environments 
+            that break conventional automation. This is a multi-billion dollar wedge into 
+            industrial, defense, and infrastructure automation where movement is the limiting factor.
           </motion.p>
         </div>
       </section>
@@ -245,15 +245,15 @@ export default function InvestorsPage() {
         <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-gradient-to-r from-white/[0.05] to-white/[0.03] p-10 backdrop-blur-xl">
           <div className="max-w-3xl">
             <p className="text-xs font-medium uppercase tracking-[0.24em] text-white/45">
-              Investor Contact
+              Capital Partners
             </p>
             <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
-              Back the next movement category in robotics.
+              Position at the genesis of adaptive robotics.
             </h2>
             <p className="mt-5 text-lg leading-8 text-white/65">
-              For investor conversations, strategic partnerships, or venture-level
-              discussions around OddBotix and its role inside the broader Noaerth
-              ecosystem, start here.
+              We're assembling a select group of venture partners to scale this technical frontier. 
+              Our Series A will accelerate commercialization across defense, industrial, 
+              and infrastructure applications.
             </p>
           </div>
 
