@@ -49,24 +49,26 @@ export default function Image() {
             letterSpacing: '-0.03em',
             position: 'relative',
             zIndex: 1,
+            textShadow: '0 0 20px rgba(34,211,238,0.5)'
           }}
         >
-          OddBotix
+          ODD<span style={{ color: '#22d3ee' }}>BOTIX</span>
         </div>
         
         {/* Subtitle */}
         <div
           style={{
-            fontSize: 36,
-            fontWeight: 300,
-            color: '#ffffff',
-            letterSpacing: '-0.02em',
-            opacity: 0.8,
+            fontSize: 32,
+            fontWeight: 500,
+            color: '#a5f3fc',
+            letterSpacing: '0.05em',
             position: 'relative',
             zIndex: 1,
+            marginTop: 12,
+            textTransform: 'uppercase'
           }}
         >
-          Experimental Robotics
+          Motion Intelligence Systems
         </div>
         
         {/* Accent line */}

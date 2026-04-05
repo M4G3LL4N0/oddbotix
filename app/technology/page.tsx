@@ -145,6 +145,8 @@ export default function TechnologyPage() {
                   <h2 className="mt-5 text-2xl font-semibold tracking-tight text-white">
                     {item.title}
                   </h2>
+          
+                  <div className="mt-1 h-px w-12 bg-gradient-to-r from-cyan-400 to-blue-500" />
 
                   <p className="mt-4 text-sm leading-7 text-white/64">
                     {item.description}

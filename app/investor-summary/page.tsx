@@ -46,11 +46,11 @@ const InvestorsPage: NextPage = () => {
         <div className="container mx-auto px-6 py-16 max-w-6xl">
           {/* Hero */}
           <section className="mb-24">
-            <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
               OddBotix
             </h1>
             <p className="text-2xl md:text-3xl mb-8 max-w-3xl leading-tight">
-              Building the first general-purpose robotics platform powered by generative AI
+              Motion intelligence platform for high-complexity environments
             </p>
             <div className="flex gap-4">
               <button className="px-8 py-3 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full font-medium">

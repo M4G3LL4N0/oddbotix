@@ -134,6 +134,10 @@ export default function SystemsPage() {
                   <h2 className="mt-5 text-2xl font-semibold tracking-tight text-white">
                     {system.title}
                   </h2>
+          
+                  <div className="mt-2 text-xs font-medium uppercase tracking-[0.2em] text-cyan-200/80">
+                    {system.name}
+                  </div>
 
                   <p className="mt-4 text-sm leading-7 text-white/64">
                     {system.description}

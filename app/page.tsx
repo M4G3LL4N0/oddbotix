@@ -173,7 +173,7 @@ function Hero() {
             transition={{ duration: 0.85, delay: 0.08 }}
             className="mt-8 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl"
           >
-            The physics-defying robotics company.
+            Redefining robotic movement for impossible environments
           </motion.h1>
 
           <motion.p
@@ -182,8 +182,7 @@ function Hero() {
             transition={{ duration: 0.85, delay: 0.16 }}
             className="mt-8 max-w-2xl text-lg leading-8 text-white/68 sm:text-xl"
           >
-            We pioneer robotic systems that move in ways physics says shouldn't work,
-            solving mobility challenges in environments where conventional machines fail.
+            OddBotix develops adaptive motion systems for hazardous, constrained, and high-complexity operational environments where conventional robotics fails.
           </motion.p>
 
           <motion.div
