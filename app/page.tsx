@@ -187,7 +187,7 @@ function Hero() {
             transition={{ duration: 0.85, delay: 0.08 }}
             className="mt-8 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl"
           >
-            Machines built for movement that should not work.
+            The physics-defying robotics company.
           </motion.h1>
 
           <motion.p
@@ -196,9 +196,8 @@ function Hero() {
             transition={{ duration: 0.85, delay: 0.16 }}
             className="mt-8 max-w-2xl text-lg leading-8 text-white/68 sm:text-xl"
           >
-            OddBotix develops experimental robotic systems with abnormal locomotion,
-            adaptive body logic, and motion intelligence for environments where
-            conventional machines break down.
+            We pioneer robotic systems that move in ways physics says shouldn't work,
+            solving mobility challenges in environments where conventional machines fail.
           </motion.p>
 
           <motion.div
@@ -257,7 +256,7 @@ function Systems() {
             Featured Systems
           </p>
           <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
-            A robotics stack designed beyond conventional movement.
+            Creating a new category: nonstandard locomotion systems
           </h2>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-white/65">
             OddBotix combines experimental body architectures, motion control
@@ -308,7 +307,7 @@ function Technology() {
           </p>
 
           <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white">
-            The control layer becomes the product.
+            Proprietary motion intelligence as the core IP
           </h2>
 
           <p className="mt-5 text-base leading-8 text-white/65">
@@ -364,7 +363,7 @@ function Applications() {
             Applications
           </p>
           <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
-            Start where standard robotics fails hardest.
+            High-value applications where conventional robotics cannot operate
           </h2>
         </div>
 
@@ -392,7 +391,7 @@ function Thesis() {
           </p>
 
           <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
-            The next robotics category will be defined by movement intelligence.
+            Movement intelligence is the next trillion-dollar robotics category
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-white/65">
@@ -422,7 +421,7 @@ function FinalCta() {
           </p>
 
           <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
-            A new movement category starts with one unforgettable system.
+            First-mover advantage in nonstandard locomotion robotics
           </h2>
 
           <p className="mt-5 text-lg leading-8 text-white/65">
