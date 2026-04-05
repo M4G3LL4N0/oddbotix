@@ -139,13 +139,14 @@ export default function HomePage() {
 function Hero() {
   return (
     <section className="relative">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(74,_165,_255,_0.08)_0%,_rgba(5,_8,_22,_0)_70%)] opacity-60" />
       <div className="mx-auto grid min-h-[88vh] max-w-7xl items-center gap-14 px-6 py-20 md:grid-cols-[1.08fr_0.92fr]">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-cyan-200"
+            className="inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-cyan-200 glow-sm"
           >
             Experimental Robotics Venture
           </motion.div>
@@ -154,9 +155,9 @@ function Hero() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.08 }}
-            className="mt-8 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl"
+            className="mt-8 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl glow"
           >
-            Machines built for movement that should not work.
+            Machines built for movement that <span className="text-primary">should not work</span>.
           </motion.h1>
 
           <motion.p
@@ -166,12 +167,18 @@ function Hero() {
             className="mt-8 max-w-2xl text-lg leading-8 text-white/68 sm:text-xl"
           >
             OddBotix develops experimental robotic systems with abnormal locomotion,
-            adaptive body logic, and motion intelligence.
+            adaptive body logic, and motion intelligence for environments where conventional robots fail.
           </motion.p>
 
           <motion.div className="mt-10 flex gap-4">
-            <a className="rounded-full bg-white px-6 py-3 text-black">View Systems</a>
-            <a className="rounded-full border border-white/20 px-6 py-3">Explore</a>
+            <a className="rounded-full bg-primary px-6 py-3 font-medium text-black transition hover:bg-primary-hover hover:shadow-xl hover:shadow-primary/20">
+              View Systems
+              <ArrowRight className="ml-2 inline h-4 w-4" />
+            </a>
+            <a className="flex items-center rounded-full border border-white/20 bg-white/5 px-6 py-3 transition hover:bg-white/10">
+              Explore Technology
+              <ArrowRight className="ml-2 inline h-4 w-4" />
+            </a>
           </motion.div>
         </div>
 
