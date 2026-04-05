@@ -257,13 +257,13 @@ function ApplicationsPreview() {
 
 function ThesisPreview() {
   return (
-    <section id="thesis" className="relative px-6 py-28">
-      <div className="pointer-events-none absolute inset-0 -z-1 bg-[linear-gradient(180deg,_rgba(5,_8,_22,_0)_0%,_rgba(5,_8,_22,_0.6)_50%,_rgba(5,_8,_22,_1)_100%)]" />
+    <section id="thesis" className="relative px-6 py-36">
+      <div className="pointer-events-none absolute inset-0 -z-1 bg-[radial-gradient(ellipse_at_center,_rgba(74,_165,_255,_0.08)_0%,_rgba(5,_8,_22,_0)_70%)]" />
       <div className="mx-auto max-w-7xl">
         <div className="glass premium-card p-16">
           <div className="grid gap-16 md:grid-cols-[1fr_1.2fr]">
             <div className="space-y-8">
-              <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+              <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl glow">
                 The Physics of <span className="text-primary">Movement</span>
               </h2>
               <p className="text-lg text-white/68">
@@ -271,6 +271,15 @@ function ThesisPreview() {
                 Our research spans hyper-constrained environments, non-Euclidean
                 spaces, and unconventional mobility frameworks.
               </p>
+              <div className="pt-4">
+                <a
+                  href="/thesis"
+                  className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+                >
+                  Explore Our Thesis
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </div>
             </div>
             <div className="grid gap-8 md:grid-cols-2">
               <div className="rounded-xl border border-white/10 bg-white/5 p-8">
@@ -285,6 +294,20 @@ function ThesisPreview() {
                 <h3 className="mb-3 text-xl font-semibold text-white">Adaptive Body Logic</h3>
                 <p className="text-white/60">
                   Machines that reconfigure topology and degrees of freedom on demand.
+                </p>
+              </div>
+              <div className="rounded-xl border border-white/10 bg-white/5 p-8">
+                <Move3D className="mb-4 h-6 w-6 text-primary" />
+                <h3 className="mb-3 text-xl font-semibold text-white">Motion Intelligence</h3>
+                <p className="text-white/60">
+                  Proprietary control systems that discover and deploy novel locomotion.
+                </p>
+              </div>
+              <div className="rounded-xl border border-white/10 bg-white/5 p-8">
+                <Shield className="mb-4 h-6 w-6 text-primary" />
+                <h3 className="mb-3 text-xl font-semibold text-white">Hazardous Environments</h3>
+                <p className="text-white/60">
+                  Systems engineered for unstable, contaminated, and high-risk spaces.
                 </p>
               </div>
             </div>
@@ -308,12 +331,19 @@ function FinalCta() {
             <p className="mx-auto max-w-2xl text-xl text-white/68">
               Our systems operate where conventional robotics fails. Partner with us to develop specialized mobility solutions for your most challenging environments.
             </p>
-            <div>
+            <div className="flex justify-center gap-4">
               <a
-                href="#"
+                href="/contact"
                 className="inline-flex items-center rounded-full bg-primary px-10 py-5 text-lg font-bold tracking-tight text-black transition hover:bg-primary-hover hover:shadow-xl hover:shadow-primary/15"
               >
-                Explore CASE Profiles
+                Partner With Us
+                <ArrowRight className="ml-3 h-5 w-5" />
+              </a>
+              <a
+                href="/technology"
+                className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-10 py-5 text-lg font-medium text-white transition hover:bg-white/10"
+              >
+                Explore Technology
                 <ArrowRight className="ml-3 h-5 w-5" />
               </a>
             </div>
@@ -332,14 +362,17 @@ function Footer() {
         <div className="flex flex-col items-center justify-between md:flex-row">
           <div className="flex flex-col space-y-1">
             <span className="text-lg font-semibold tracking-tight text-white">OddBotix</span>
-            <span className="text-xs tracking-wide text-white/40 uppercase">Research Division</span>
+            <span className="text-xs tracking-wide text-white/40 uppercase">A Noaerth Ecosystem Company</span>
           </div>
           <div className="mt-8 flex space-x-8 md:mt-0">
-            <a href="/privacy" className="text-sm text-white/50 transition hover:text-white/90">
-              Protocol
+            <a href="/technology" className="text-sm text-white/50 transition hover:text-white/90">
+              Technology
             </a>
-            <a href="/terms" className="text-sm text-white/50 transition hover:text-white/90">
-              Security
+            <a href="/applications" className="text-sm text-white/50 transition hover:text-white/90">
+              Applications
+            </a>
+            <a href="/thesis" className="text-sm text-white/50 transition hover:text-white/90">
+              Thesis
             </a>
             <a href="/contact" className="text-sm text-white/50 transition hover:text-white/90">
               Contact
