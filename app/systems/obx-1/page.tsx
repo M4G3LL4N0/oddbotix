@@ -26,12 +26,15 @@ export default function Page() {
         <section className="mb-24">
           <h3 className="text-4xl font-bold mb-8">System Overview</h3>
           <div className="space-y-6 text-gray-300">
-            <p>
-              OBX-1 is a self-contained robotic system engineered for navigation and operation in confined spaces. Unlike traditional robots, it employs a multi-modal locomotion system that adapts to complex geometries and challenging surfaces.
-            </p>
-            <p>
-              What sets OBX-1 apart is its ability to maintain operational integrity in environments that would immobilize or damage conventional robotics. Its compact form factor belies its sophisticated internal systems and robust capabilities.
-            </p>
+              <p className="text-lg text-gray-300">
+                The OBX-1 confined-space crawler series represents our first-generation modular robotics platform for environments below 30cm access diameter. Each unit combines:
+              </p>
+              <ul className="mt-4 space-y-2 text-gray-300">
+                <li>- Segmented body architecture with 9 degrees of freedom</li>
+                <li>- Hybrid wheel-leg locomotion modules</li>
+                <li>- Tactile surface adaptation</li>
+                <li>- Autonomous posture optimization</li>
+              </ul>
           </div>
         </section>
 
