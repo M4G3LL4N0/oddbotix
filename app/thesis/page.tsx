@@ -134,15 +134,13 @@ export default function ThesisPage() {
   );
 }
 
-function ThesisPoint({
-  icon,
-  title,
-  description,
-}: {
+interface ThesisPointProps {
   icon: React.ReactNode;
   title: string;
   description: string;
-}) {
+}
+
+function ThesisPoint({ icon, title, description }: ThesisPointProps) {
   return (
     <div className="flex items-start gap-4">
       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">

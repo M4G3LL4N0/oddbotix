@@ -164,3 +164,10 @@ function BackgroundLayers() {
     </div>
   );
 }
+
+interface TechnologySection {
+  title: string;
+  description: string;
+  icon: React.ComponentType<{ className?: string }>;
+  items: string[];
+}

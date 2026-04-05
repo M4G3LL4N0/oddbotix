@@ -149,3 +149,10 @@ function BackgroundLayers() {
     </div>
   );
 }
+
+interface ContactFormField {
+  id: string;
+  label: string;
+  type: string;
+  placeholder?: string;
+}

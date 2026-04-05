@@ -99,15 +99,13 @@ export default function ApplicationsPage() {
   );
 }
 
-function ApplicationCard({
-  icon,
-  title,
-  description,
-}: {
+interface ApplicationCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
-}) {
+}
+
+function ApplicationCard({ icon, title, description }: ApplicationCardProps) {
   return (
     <motion.div
       whileHover={{ y: -4 }}
