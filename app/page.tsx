@@ -257,39 +257,35 @@ function ApplicationsPreview() {
 
 function ThesisPreview() {
   return (
-    <section id="thesis" className="relative px-6 py-32">
+    <section id="thesis" className="relative px-6 py-28">
+      <div className="pointer-events-none absolute inset-0 -z-1 bg-[linear-gradient(180deg,_rgba(5,_8,_22,_0)_0%,_rgba(5,_8,_22,_0.6)_50%,_rgba(5,_8,_22,_1)_100%)]" />
       <div className="mx-auto max-w-7xl">
-        <div className="glass premium-card p-12">
-          <div className="grid gap-12 md:grid-cols-2">
-            <div>
-              <h2 className="text-h1 glow">Movement Intelligence</h2>
-              <p className="mt-6 text-lg text-white/60">
-                The next frontier in robotics isn't better sensors or stronger actuators - 
-                it's fundamentally new ways for machines to move through the world.
+        <div className="glass premium-card p-16">
+          <div className="grid gap-16 md:grid-cols-[1fr_1.2fr]">
+            <div className="space-y-8">
+              <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+                The Physics of <span className="text-primary">Movement</span>
+              </h2>
+              <p className="text-lg text-white/68">
+                We're reinventing how machines interact with physical constraints.
+                Our research spans hyper-constrained environments, non-Euclidean
+                spaces, and unconventional mobility frameworks.
               </p>
             </div>
-            <div className="space-y-8">
-              <div className="flex items-start">
-                <div className="mr-4 mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Radar className="h-4 w-4" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-medium text-white">Beyond Wheels & Tracks</h3>
-                  <p className="mt-1 text-white/60">
-                    We develop movement strategies that break conventional assumptions.
-                  </p>
-                </div>
+            <div className="grid gap-8 md:grid-cols-2">
+              <div className="rounded-xl border border-white/10 bg-white/5 p-8">
+                <Radar className="mb-4 h-6 w-6 text-primary" />
+                <h3 className="mb-3 text-xl font-semibold text-white">Beyond Wheels & Tracks</h3>
+                <p className="text-white/60">
+                  Locomotion paradigms that break conventional mechanical assumptions.
+                </p>
               </div>
-              <div className="flex items-start">
-                <div className="mr-4 mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <ScanLine className="h-4 w-4" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-medium text-white">Adaptive Body Logic</h3>
-                  <p className="mt-1 text-white/60">
-                    Machines that reconfigure their geometry and posture mid-mission.
-                  </p>
-                </div>
+              <div className="rounded-xl border border-white/10 bg-white/5 p-8">
+                <ScanLine className="mb-4 h-6 w-6 text-primary" />
+                <h3 className="mb-3 text-xl font-semibold text-white">Adaptive Body Logic</h3>
+                <p className="text-white/60">
+                  Machines that reconfigure topology and degrees of freedom on demand.
+                </p>
               </div>
             </div>
           </div>
@@ -301,21 +297,27 @@ function ThesisPreview() {
 
 function FinalCta() {
   return (
-    <section id="contact" className="relative px-6 py-32 gradient-bg">
-      <div className="mx-auto max-w-3xl text-center">
-        <h2 className="text-h1 glow">Pioneering Movement Intelligence</h2>
-        <p className="mx-auto mt-6 text-lg text-white/60">
-          OddBotix is developing the next generation of robotic locomotion architectures.
-          Join our early access program for mission partners and investors.
-        </p>
-        <div className="mt-10">
-          <a
-            href="#"
-            className="inline-flex items-center rounded-full bg-primary px-8 py-4 text-lg font-medium text-black transition hover:bg-primary-hover hover:shadow-glow-hover"
-          >
-            Request Access
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </a>
+    <section id="contact" className="relative px-6 py-36">
+      <div className="pointer-events-none absolute inset-0 -z-1 bg-[radial-gradient(ellipse_at_center,_rgba(74,_165,_255,_0.12)_0%,_rgba(5,_8,_22,_0)_70%)]" />
+      <div className="mx-auto max-w-4xl">
+        <div className="glass premium-card px-16 py-24 text-center">
+          <div className="space-y-10">
+            <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl glow">
+              Built for the Impossible
+            </h2>
+            <p className="mx-auto max-w-2xl text-xl text-white/68">
+              Our systems operate where conventional robotics fails. Partner with us to develop specialized mobility solutions for your most challenging environments.
+            </p>
+            <div>
+              <a
+                href="#"
+                className="inline-flex items-center rounded-full bg-primary px-10 py-5 text-lg font-bold tracking-tight text-black transition hover:bg-primary-hover hover:shadow-xl hover:shadow-primary/15"
+              >
+                Explore CASE Profiles
+                <ArrowRight className="ml-3 h-5 w-5" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -324,28 +326,28 @@ function FinalCta() {
 
 function Footer() {
   return (
-    <footer className="border-t border-white/10 px-6 py-16 text-white/40">
+    <footer className="relative border-t border-white/10 px-6 py-20">
+      <div className="gradient-line" />
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col items-center justify-between md:flex-row">
-          <div className="mb-6 md:mb-0">
-            <span className="text-white">OddBotix</span>
-            <span className="mx-2">•</span>
-            <span>Pioneering Movement Intelligence</span>
+          <div className="flex flex-col space-y-1">
+            <span className="text-lg font-semibold tracking-tight text-white">OddBotix</span>
+            <span className="text-xs tracking-wide text-white/40 uppercase">Research Division</span>
           </div>
-          <div className="flex space-x-8">
-            <a href="#" className="transition hover:text-white/80 hover:underline">
-              Privacy
+          <div className="mt-8 flex space-x-8 md:mt-0">
+            <a href="/privacy" className="text-sm text-white/50 transition hover:text-white/90">
+              Protocol
             </a>
-            <a href="#" className="transition hover:text-white/80 hover:underline">
-              Terms
+            <a href="/terms" className="text-sm text-white/50 transition hover:text-white/90">
+              Security
             </a>
-            <a href="#" className="transition hover:text-white/80 hover:underline">
+            <a href="/contact" className="text-sm text-white/50 transition hover:text-white/90">
               Contact
             </a>
           </div>
         </div>
-        <div className="mt-8 text-center text-sm text-white/30 md:text-left">
-          © {new Date().getFullYear()} OddBotix. All rights reserved.
+        <div className="mt-8 border-t border-white/10 pt-8 text-center text-xs text-white/30 md:text-left">
+          © {new Date().getFullYear()} OddBotix Research. Proprietary technology. All rights strictly enforced.
         </div>
       </div>
     </footer>
