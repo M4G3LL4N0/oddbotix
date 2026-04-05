@@ -30,11 +30,14 @@ const OBX2Page = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <p className="text-lg text-gray-300 mb-4">
-                The OBX-2 represents a quantum leap in robotic mobility, combining advanced AI with cutting-edge mechanical engineering.
+                The OBX-2 adaptive terrain unit series features our proprietary terrain intelligence system:
               </p>
-              <p className="text-lg text-gray-300">
-                Designed as the core mobility unit for OddBotix systems, it provides unmatched adaptability across diverse terrains.
-              </p>
+              <ul className="space-y-2 text-gray-300">
+                <li>- Real-time surface classification (16 terrain types)</li>
+                <li>- Dynamic suspension with 200Hz adjustment</li>
+                <li>- Predictive gait adaptation</li>
+                <li>- Multi-spectral traction control</li>
+              </ul>
             </div>
             <div className="space-y-4">
               <div className="flex items-center">

@@ -89,7 +89,7 @@ export default function MissionPage() {
             transition={{ duration: 0.75, delay: 0.06 }}
             className="mt-8 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl"
           >
-            Build robotics for the environments that break normal assumptions.
+            Where wheels and tracks fail, we build robotic solutions.
           </motion.h1>
 
           <motion.p

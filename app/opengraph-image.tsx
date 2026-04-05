@@ -52,7 +52,14 @@ export default function Image() {
             textShadow: '0 0 20px rgba(34,211,238,0.5)'
           }}
         >
-          ODD<span style={{ color: '#22d3ee' }}>BOTIX</span>
+          <span style={{ 
+            background: 'linear-gradient(90deg, #fff, #a5f3fc)',
+            WebkitBackgroundClip: 'text',
+            backgroundClip: 'text',
+            color: 'transparent'
+          }}>
+            ODDBOTIX
+          </span>
         </div>
         
         {/* Subtitle */}
