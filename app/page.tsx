@@ -109,28 +109,42 @@ export default function HomePage() {
             OddBotix
           </a>
 
-          <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
-            <a href="/about" className="transition hover:text-white">
-              About
-            </a>
-            <a href="/systems" className="transition hover:text-white">
-              Systems
-            </a>
-            <a href="/technology" className="transition hover:text-white">
-              Technology
-            </a>
-            <a href="/applications" className="transition hover:text-white">
-              Applications
-            </a>
-            <a href="/thesis" className="transition hover:text-white">
-              Thesis
-            </a>
-            <a href="/investors" className="transition hover:text-white">
-              Investors
-            </a>
-            <a href="/contact" className="transition hover:text-white">
-              Contact
-            </a>
+          <nav className="hidden items-center gap-6 text-sm text-white/70 md:flex">
+            <div className="flex items-center gap-6">
+              <a href="/about" className="transition hover:text-white">
+                About
+              </a>
+              <a href="/systems" className="transition hover:text-white">
+                Systems
+              </a>
+              <a href="/technology" className="transition hover:text-white">
+                Tech
+              </a>
+              <a href="/applications" className="transition hover:text-white">
+                Applications
+              </a>
+              <a href="/mission" className="transition hover:text-white">
+                Mission
+              </a>
+            </div>
+            <div className="h-4 w-px bg-white/20" />
+            <div className="flex items-center gap-6">
+              <a href="/thesis" className="transition hover:text-white">
+                Thesis
+              </a>
+              <a href="/investors" className="transition hover:text-white">
+                Investors
+              </a>
+              <a href="/partners" className="transition hover:text-white">
+                Partners
+              </a>
+              <a href="/careers" className="transition hover:text-white">
+                Careers
+              </a>
+              <a href="/contact" className="transition hover:text-white">
+                Contact
+              </a>
+            </div>
           </nav>
 
           <a
