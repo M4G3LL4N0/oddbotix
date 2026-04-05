@@ -78,7 +78,7 @@ export default function ApplicationsPage() {
             transition={{ duration: 0.75, delay: 0.06 }}
             className="mt-8 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl"
           >
-            Built for environments where conventional robotics breaks down.
+            Where conventional robotics fails
           </motion.h1>
 
           <motion.p

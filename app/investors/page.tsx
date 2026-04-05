@@ -102,7 +102,7 @@ export default function InvestorsPage() {
             transition={{ duration: 0.75, delay: 0.06 }}
             className="mt-8 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl"
           >
-            The next control frontier in robotics starts with movement.
+            Movement intelligence as the next robotics platform
           </motion.h1>
 
           <motion.p

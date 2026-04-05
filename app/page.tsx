@@ -109,10 +109,7 @@ export default function HomePage() {
             OddBotix
           </a>
 
-          <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
-            <a href="/about" className="transition hover:text-white">
-              About
-            </a>
+          <nav className="hidden items-center gap-6 text-sm text-white/70 md:flex">
             <a href="/systems" className="transition hover:text-white">
               Systems
             </a>
@@ -122,14 +119,11 @@ export default function HomePage() {
             <a href="/applications" className="transition hover:text-white">
               Applications
             </a>
-            <a href="/mission" className="transition hover:text-white">
-              Mission
+            <a href="/thesis" className="transition hover:text-white">
+              Thesis
             </a>
             <a href="/investors" className="transition hover:text-white">
               Investors
-            </a>
-            <a href="/contact" className="transition hover:text-white">
-              Contact
             </a>
           </nav>
 
@@ -173,7 +167,7 @@ function Hero() {
             transition={{ duration: 0.85, delay: 0.08 }}
             className="mt-8 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl"
           >
-            Redefining robotic movement for impossible environments
+            Movement intelligence for impossible environments
           </motion.h1>
 
           <motion.p
@@ -439,8 +433,8 @@ function Footer() {
   return (
     <footer className="border-t border-white/10 px-6 py-8">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-white/45 md:flex-row md:items-center md:justify-between">
-        <div>OddBotix</div>
-        <div>Experimental robotics for abnormal locomotion and adaptive systems.</div>
+        <div>OddBotix — A Noaerth Ecosystem Company</div>
+        <div>© {new Date().getFullYear()} All rights reserved</div>
       </div>
     </footer>
   );
