@@ -21,33 +21,66 @@ export default function Image() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)',
-          color: 'white',
+          background: '#000000',
+          position: 'relative',
+          overflow: 'hidden',
         }}
       >
+        {/* Background gradient */}
         <div
           style={{
-            fontSize: 100,
+            position: 'absolute',
+            width: '150%',
+            height: '150%',
+            background: 'radial-gradient(circle at center, #111111 0%, #000000 70%)',
+            opacity: 0.8,
+          }}
+        />
+        
+        {/* Main title */}
+        <div
+          style={{
+            fontSize: 120,
             fontWeight: 700,
-            background: 'linear-gradient(90deg, #4f46e5, #9333ea)',
-            backgroundClip: 'text',
-            color: 'transparent',
+            color: '#ffffff',
             lineHeight: 1,
             marginBottom: 20,
+            textTransform: 'uppercase',
+            letterSpacing: '-0.03em',
+            position: 'relative',
+            zIndex: 1,
           }}
         >
           OddBotix
         </div>
+        
+        {/* Subtitle */}
         <div
           style={{
-            fontSize: 40,
+            fontSize: 36,
             fontWeight: 300,
-            color: '#ffffffaa',
-            letterSpacing: '-0.025em',
+            color: '#ffffff',
+            letterSpacing: '-0.02em',
+            opacity: 0.8,
+            position: 'relative',
+            zIndex: 1,
           }}
         >
           Experimental Robotics
         </div>
+        
+        {/* Accent line */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: 4,
+            background: 'linear-gradient(90deg, #ffffff 0%, transparent 100%)',
+            opacity: 0.2,
+          }}
+        />
       </div>
     ),
     {
