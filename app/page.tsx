@@ -122,6 +122,9 @@ export default function HomePage() {
             <a href="#thesis" className="transition hover:text-white">
               Thesis
             </a>
+            <a href="/investors" className="transition hover:text-white">
+              Investors
+            </a>
             <a href="/contact" className="transition hover:text-white">
               Contact
             </a>
