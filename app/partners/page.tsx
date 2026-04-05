@@ -129,7 +129,10 @@ export default function PartnersPage() {
                   </h2>
 
                   <p className="mt-4 text-sm leading-7 text-white/64">
-                    {partner.description}
+                    {partner.description}{" "}
+                    <span className="text-xs text-cyan-200/70">
+                      [{index === 0 ? "Pilot deployments available Q3 2026" : "Limited capacity"}]
+                    </span>
                   </p>
                 </div>
               </motion.div>
