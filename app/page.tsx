@@ -110,16 +110,19 @@ export default function HomePage() {
           </a>
 
           <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
-            <a href="#systems" className="transition hover:text-white">
+            <a href="/about" className="transition hover:text-white">
+              About
+            </a>
+            <a href="/systems" className="transition hover:text-white">
               Systems
             </a>
-            <a href="#technology" className="transition hover:text-white">
+            <a href="/technology" className="transition hover:text-white">
               Technology
             </a>
-            <a href="#applications" className="transition hover:text-white">
+            <a href="/applications" className="transition hover:text-white">
               Applications
             </a>
-            <a href="#thesis" className="transition hover:text-white">
+            <a href="/thesis" className="transition hover:text-white">
               Thesis
             </a>
             <a href="/investors" className="transition hover:text-white">
