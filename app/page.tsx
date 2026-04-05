@@ -265,9 +265,9 @@ function ApplicationsPreview() {
 function ThesisPreview() {
   return (
     <section id="thesis" className="relative px-6 py-36">
-      <div className="pointer-events-none absolute inset-0 -z-1 bg-[radial-gradient(ellipse_at_center,_rgba(74,_165,_255,_0.08)_0%,_rgba(5,_8,_22,_0)_70%)]" />
+      <div className="pointer-events-none absolute inset-0 -z-1 bg-grid-white/[0.02]" />
       <div className="mx-auto max-w-7xl">
-        <div className="glass premium-card p-16">
+        <div className="border border-white/5 bg-gradient-to-br from-black via-[#050816] to-black p-16 shadow-2xl shadow-primary/5 backdrop-blur-sm">
           <div className="grid gap-16 md:grid-cols-[1fr_1.2fr]">
             <div className="space-y-8">
               <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl glow">

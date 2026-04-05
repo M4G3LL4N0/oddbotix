@@ -111,13 +111,13 @@ function ApplicationCard({
   return (
     <motion.div
       whileHover={{ y: -4 }}
-      className="glass premium-card p-8"
+      className="border border-white/5 bg-[#050816] p-8 transition-all hover:border-white/10 hover:shadow-lg"
     >
-      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary backdrop-blur-sm">
         {icon}
       </div>
-      <h3 className="mt-6 text-xl font-medium">{title}</h3>
-      <p className="mt-3 text-white/60">{description}</p>
+      <h3 className="mt-6 text-xl font-medium tracking-tight">{title}</h3>
+      <p className="mt-3 text-sm leading-relaxed text-white/60">{description}</p>
     </motion.div>
   );
 }

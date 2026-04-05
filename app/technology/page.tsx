@@ -43,12 +43,12 @@ export default function TechnologyPage() {
             </motion.div>
 
             <div className="grid gap-8 md:grid-cols-2">
-              <div className="glass premium-card">
+              <div className="border border-white/5 bg-gradient-to-br from-black to-[#050816] p-8 shadow-lg">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 backdrop-blur-sm">
                     <Move3D className="h-6 w-6 text-primary" />
                   </div>
-                  <h2 className="text-2xl font-medium">Body Architecture</h2>
+                  <h2 className="text-2xl font-medium tracking-tight">Body Architecture</h2>
                 </div>
                 <p className="mt-6 text-white/60">
                   Reconfigurable robotic structures that adapt their geometry, posture, and access logic mid-mission. 
