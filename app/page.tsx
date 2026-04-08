@@ -249,6 +249,24 @@ function Hero() {
   );
 }
 
+const SystemsNav = () => {
+  return (
+    <div className="mt-20 grid grid-cols-2 gap-4 md:grid-cols-4">
+      {capabilities.map((cap) => (
+        <div 
+          key={cap.label} 
+          className="rounded-xl border border-white/10 bg-white/[0.03] p-4 text-center"
+        >
+          <div className="text-3xl font-bold text-white">{cap.metric}</div>
+          <div className="mt-1 text-xs uppercase tracking-wider text-white/50">
+            {cap.label}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function Systems() {
   const capabilities = [
     { metric: "95%", label: "Obstacle Navigation Success" },
