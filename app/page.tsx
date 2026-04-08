@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import dynamic from 'next/dynamic';
-import dynamic from 'next/dynamic';
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -100,6 +99,17 @@ const architectureBlocks = [
     ],
   },
 ];
+
+import { BackgroundLayers } from './about/page';
+import { Footer } from './footer';
+import { Hero } from './hero';
+import { Systems } from './systems';
+import { CoreTechnologies } from './core-technologies';
+import { Technology } from './technology';
+import { Applications } from './applications';
+import { Partners } from './partners';
+import { Thesis } from './thesis';
+import { FinalCta } from './final-cta';
 
 export default function HomePage() {
   return (
@@ -737,6 +747,22 @@ function HeroPanel() {
 interface MetricProps {
   label: string;
   value: string;
+}
+
+interface TechRowProps {
+  icon: React.ReactNode;
+  title: string;
+  copy: string;
+}
+
+interface TechBlockProps {
+  title: string;
+  items: string[];
+}
+
+interface ApplicationCardProps {
+  title: string;
+  copy: string;
 }
 
 function Metric({ label, value }: MetricProps) {
