@@ -164,7 +164,13 @@ function Hero() {
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, delay: 0.08 }}
+            transition={{ 
+              duration: 0.85, 
+              delay: 0.08,
+              type: "spring",
+              stiffness: 50,
+              damping: 10
+            }}
             className="mt-8 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl"
           >
             Movement intelligence for impossible environments
