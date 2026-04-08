@@ -243,8 +243,105 @@ function Systems() {
     { metric: "85°", label: "Maximum Incline" },
   ];
 
+  const featuredSystems = [
+    {
+      id: "obx-1",
+      name: "OBX-1",
+      description: "Compact inspection system for confined spaces",
+      image: "/systems/obx-1.jpg",
+      specs: [
+        { label: "Weight", value: "4.2 kg" },
+        { label: "Dimensions", value: "40 × 25 × 15 cm" },
+        { label: "Payload", value: "1.5 kg" },
+        { label: "Runtime", value: "6 hours" }
+      ]
+    },
+    {
+      id: "obx-2", 
+      name: "OBX-2",
+      description: "Mid-size platform for industrial inspection",
+      image: "/systems/obx-2.jpg",
+      specs: [
+        { label: "Weight", value: "8.5 kg" },
+        { label: "Dimensions", value: "60 × 40 × 25 cm" },
+        { label: "Payload", value: "3.2 kg" },
+        { label: "Runtime", value: "8 hours" }
+      ]
+    },
+    {
+      id: "obx-3",
+      name: "OBX-3",
+      description: "Heavy-duty system for complex environments",
+      image: "/systems/obx-3.jpg",
+      specs: [
+        { label: "Weight", value: "15 kg" },
+        { label: "Dimensions", value: "80 × 50 × 35 cm" },
+        { label: "Payload", value: "6 kg" },
+        { label: "Runtime", value: "12 hours" }
+      ]
+    }
+  ];
+
   return (
     <section id="systems" className="relative px-6 pb-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-20">
+          <p className="text-xs font-medium uppercase tracking-[0.24em] text-white/45">
+            Product Line
+          </p>
+          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
+            Engineered for extreme environments
+          </h2>
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-white/65">
+            Our systems are designed to operate where conventional robotics fail,
+            combining adaptive structures with intelligent motion control.
+          </p>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-3">
+          {featuredSystems.map((system) => (
+            <div 
+              key={system.id}
+              className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.03] p-6"
+            >
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.16),transparent_40%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_36%)] opacity-70 transition duration-300 group-hover:opacity-100" />
+              
+              <div className="relative h-64 rounded-[1.5rem] bg-black/20">
+                <img
+                  src={system.image}
+                  alt={system.name}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+
+              <div className="mt-6">
+                <h3 className="text-2xl font-semibold text-white">{system.name}</h3>
+                <p className="mt-2 text-sm leading-7 text-white/62">
+                  {system.description}
+                </p>
+
+                <div className="mt-6 grid grid-cols-2 gap-4">
+                  {system.specs.map((spec) => (
+                    <div key={spec.label} className="rounded-xl border border-white/8 bg-black/20 px-3 py-2">
+                      <div className="text-xs text-white/50">{spec.label}</div>
+                      <div className="mt-1 text-sm font-medium text-white">{spec.value}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <a
+                  href={`/systems/${system.id}`}
+                  className="mt-6 inline-flex w-full items-center justify-center rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/15"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-20">
       <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-white/[0.045] p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_30px_100px_rgba(0,0,0,0.35)] backdrop-blur-xl md:p-10">
         <div className="mb-12 grid grid-cols-2 gap-4 md:grid-cols-4">
           {capabilities.map((cap) => (
