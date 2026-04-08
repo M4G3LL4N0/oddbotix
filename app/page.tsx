@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from 'next/dynamic';
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -732,7 +733,12 @@ function HeroPanel() {
   );
 }
 
-function Metric({ label, value }: { label: string; value: string }) {
+interface MetricProps {
+  label: string;
+  value: string;
+}
+
+function Metric({ label, value }: MetricProps) {
   return (
     <div className="rounded-[1.25rem] border border-white/10 bg-white/[0.04] px-5 py-4 backdrop-blur-lg">
       <div className="text-xs uppercase tracking-[0.2em] text-white/38">{label}</div>
