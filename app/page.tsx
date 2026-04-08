@@ -139,6 +139,7 @@ export default function HomePage() {
 
       <Hero />
       <Systems />
+      <CoreTechnologies />
       <Technology />
       <Applications />
       <Partners />
@@ -293,6 +294,72 @@ function Systems() {
               </div>
             );
           })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CoreTechnologies() {
+  const technologies = [
+    {
+      title: "Adaptive Motion Engine",
+      description: "Real-time posture optimization and gait adaptation",
+      icon: Move3D,
+      gradient: "from-cyan-400/10 to-violet-400/10"
+    },
+    {
+      title: "Simulation Stack",
+      description: "High-fidelity physics modeling for movement discovery",
+      icon: Radar,
+      gradient: "from-orange-400/10 to-pink-400/10"
+    },
+    {
+      title: "Field Intelligence",
+      description: "Onboard environmental mapping and terrain analysis",
+      icon: ScanLine,
+      gradient: "from-violet-400/10 to-cyan-400/10"
+    },
+    {
+      title: "Hybrid Architecture",
+      description: "Soft-rigid body systems for extreme adaptability",
+      icon: Waypoints,
+      gradient: "from-pink-400/10 to-orange-400/10"
+    }
+  ];
+
+  return (
+    <section className="px-6 py-20">
+      <div className="mx-auto max-w-7xl">
+        <div className="max-w-3xl">
+          <p className="text-xs font-medium uppercase tracking-[0.24em] text-white/45">
+            Core Technologies
+          </p>
+          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
+            The technical edge enabling impossible movement
+          </h2>
+        </div>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {technologies.map((tech) => (
+            <div 
+              key={tech.title}
+              className={`group relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-b ${tech.gradient} p-6 backdrop-blur-xl`}
+            >
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_40%)] opacity-50 transition duration-300 group-hover:opacity-100" />
+              <div className="relative">
+                <div className="inline-flex rounded-2xl border border-white/12 bg-white/8 p-3 text-white">
+                  <tech.icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-5 text-xl font-semibold text-white">
+                  {tech.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-white/62">
+                  {tech.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
