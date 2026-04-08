@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic';
 import { motion } from "framer-motion";
 import {
   ArrowRight,
