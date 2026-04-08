@@ -104,7 +104,8 @@ const architectureBlocks = [
 
 import { BackgroundLayers } from './about/page';
 import { Footer } from './footer';
-import Hero from './hero'; 
+import Hero from './hero';
+import Partners from './partners/page';
 import SystemsSection from './systems/page';
 import CoreTechnologies from './core-technologies';
 import TechnologySection from './technology/page';
@@ -164,7 +165,7 @@ export default function HomePage() {
   );
 }
 
-function Hero() {
+function LocalHero() {
   return (
     <section className="relative">
       <div className="mx-auto grid min-h-[88vh] max-w-7xl items-center gap-14 px-6 py-20 md:grid-cols-[1.08fr_0.92fr]">
@@ -598,32 +599,6 @@ function Applications() {
   );
 }
 
-function Partners() {
-  const partners = [
-    { name: "Noaerth", role: "Strategic Partner" },
-    { name: "DARPA", role: "Research Partner" },
-    { name: "MIT", role: "Academic Partner" },
-    { name: "Shell", role: "Industry Partner" },
-  ];
-
-  return (
-    <section className="px-6 py-12">
-      <div className="mx-auto max-w-7xl">
-        <p className="text-xs font-medium uppercase tracking-[0.24em] text-white/45">
-          Strategic Partners
-        </p>
-        <div className="mt-8 grid grid-cols-2 gap-6 md:grid-cols-4">
-          {partners.map((partner) => (
-            <div key={partner.name} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center">
-              <div className="text-xl font-medium text-white">{partner.name}</div>
-              <div className="mt-2 text-sm text-white/50">{partner.role}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function LocalThesis() {
   return (
@@ -694,16 +669,6 @@ function FinalCta() {
   );
 }
 
-function Footer() {
-  return (
-    <footer className="border-t border-white/10 px-6 py-8">
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-white/45 md:flex-row md:items-center md:justify-between">
-        <div>OddBotix — A Noaerth Ecosystem Company</div>
-        <div>© {new Date().getFullYear()} All rights reserved</div>
-      </div>
-    </footer>
-  );
-}
 
 function BackgroundLayers() {
   return (
