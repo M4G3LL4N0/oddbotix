@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, ReactNode } from "react";
+import { useState } from "react";
+import type { ReactNode, ComponentType } from "react";
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { motion } from "framer-motion";
@@ -104,12 +105,12 @@ const architectureBlocks = [
 import { BackgroundLayers } from './about/page';
 import { Footer } from './footer';
 import { Hero } from './hero';
-import { Systems } from './systems';
+import { Systems } from './systems/page';
 import { CoreTechnologies } from './core-technologies';
-import { Technology } from './technology';
-import { Applications } from './applications';
-import { Partners } from './partners';
-import { Thesis } from './thesis';
+import { Technology } from './technology/page';
+import { Applications } from './applications/page';
+import { Partners } from './partners/page';
+import { Thesis } from './thesis/page';
 import { FinalCta } from './final-cta';
 
 export default function HomePage() {
@@ -766,6 +767,24 @@ interface TechBlockProps {
 interface ApplicationCardProps {
   title: string;
   copy: string;
+}
+
+interface SystemSpec {
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  specs: {
+    label: string;
+    value: string;
+  }[];
+}
+
+interface Technology {
+  title: string;
+  description: string;
+  icon: ComponentType<{ className?: string }>;
+  gradient: string;
 }
 
 interface SystemSpec {
