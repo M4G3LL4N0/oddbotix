@@ -103,16 +103,17 @@ const architectureBlocks = [
 ];
 
 import { BackgroundLayers } from './about/page';
-import { Footer } from './footer';
-import Hero from './hero';
+import Footer from './footer';
 import Partners from './partners/page';
-import SystemsSection from './systems/page';
-import CoreTechnologies from './core-technologies';
-import TechnologySection from './technology/page';
-import Applications from './applications/page';
-import Partners from './partners/page';
-import ThesisSection from './thesis/page';
-import FinalCta from './final-cta';
+import { Applications } from './applications/page';
+import { TechnologySection } from './technology/page';
+import { ThesisSection } from './thesis/page';
+import { FinalCta } from './final-cta';
+
+// Use components already defined in this file
+const Hero = LocalHero;
+const SystemsSection = LocalSystems;
+const CoreTechnologies = CoreTechnologies;
 
 export default function HomePage() {
   return (
