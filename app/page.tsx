@@ -104,14 +104,14 @@ const architectureBlocks = [
 
 import { BackgroundLayers } from './about/page';
 import { Footer } from './footer';
-import { Hero } from './hero';
-import { Systems } from './systems/page';
-import { CoreTechnologies } from './core-technologies';
-import { Technology } from './technology/page';
-import { Applications } from './applications/page';
-import { Partners } from './partners/page';
-import { Thesis } from './thesis/page';
-import { FinalCta } from './final-cta';
+import Hero from './hero'; 
+import SystemsSection from './systems/page';
+import CoreTechnologies from './core-technologies';
+import TechnologySection from './technology/page';
+import Applications from './applications/page';
+import Partners from './partners/page';
+import ThesisSection from './thesis/page';
+import FinalCta from './final-cta';
 
 export default function HomePage() {
   return (
@@ -152,12 +152,12 @@ export default function HomePage() {
       </header>
 
       <Hero />
-      <Systems />
+      <SystemsSection />
       <CoreTechnologies />
-      <Technology />
+      <TechnologySection />
       <Applications />
       <Partners />
-      <Thesis />
+      <ThesisSection />
       <FinalCta />
       <Footer />
     </main>
@@ -267,7 +267,7 @@ const SystemsNav = () => {
   );
 }
 
-function Systems() {
+function LocalSystems() {
   const capabilities = [
     { metric: "95%", label: "Obstacle Navigation Success" },
     { metric: "72h", label: "Continuous Operation" },
@@ -498,7 +498,7 @@ function CoreTechnologies() {
   );
 }
 
-function Technology() {
+function LocalTechnology() {
   const [activeTab, setActiveTab] = useState('simulation');
 
   return (
@@ -625,7 +625,7 @@ function Partners() {
   );
 }
 
-function Thesis() {
+function LocalThesis() {
   return (
     <section id="thesis" className="px-6 pb-20">
       <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-gradient-to-r from-white/[0.05] to-white/[0.03] p-10 backdrop-blur-xl">
