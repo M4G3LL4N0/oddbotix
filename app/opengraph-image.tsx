@@ -33,7 +33,8 @@ export default function Image() {
             width: '150%',
             height: '150%',
             background: 'radial-gradient(circle at center, #111111 0%, #000000 70%)',
-            opacity: 0.8,
+            opacity: 0.9,
+            filter: 'blur(0.5px)',
           }}
         />
         
@@ -49,7 +50,7 @@ export default function Image() {
             letterSpacing: '-0.03em',
             position: 'relative',
             zIndex: 1,
-            textShadow: '0 0 20px rgba(34,211,238,0.5)'
+            textShadow: '0 0 30px rgba(34,211,238,0.7)'
           }}
         >
           <span style={{ 
