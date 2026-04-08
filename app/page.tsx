@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -322,6 +323,8 @@ function Systems() {
                 <img
                   src={system.image}
                   alt={system.name}
+                  width={400}
+                  height={400}
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -750,7 +753,7 @@ interface MetricProps {
 }
 
 interface TechRowProps {
-  icon: React.ReactNode;
+  icon: ReactNode;
   title: string;
   copy: string;
 }
@@ -763,6 +766,24 @@ interface TechBlockProps {
 interface ApplicationCardProps {
   title: string;
   copy: string;
+}
+
+interface SystemSpec {
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  specs: {
+    label: string;
+    value: string;
+  }[];
+}
+
+interface Technology {
+  title: string;
+  description: string;
+  icon: React.ComponentType<{ className?: string }>;
+  gradient: string;
 }
 
 function Metric({ label, value }: MetricProps) {
