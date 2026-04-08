@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -140,6 +141,7 @@ export default function HomePage() {
       <Systems />
       <Technology />
       <Applications />
+      <Partners />
       <Thesis />
       <FinalCta />
       <Footer />
@@ -233,9 +235,24 @@ function Hero() {
 }
 
 function Systems() {
+  const capabilities = [
+    { metric: "95%", label: "Obstacle Navigation Success" },
+    { metric: "72h", label: "Continuous Operation" },
+    { metric: "40cm", label: "Minimum Passage Width" },
+    { metric: "85°", label: "Maximum Incline" },
+  ];
+
   return (
     <section id="systems" className="relative px-6 pb-8">
       <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-white/[0.045] p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_30px_100px_rgba(0,0,0,0.35)] backdrop-blur-xl md:p-10">
+        <div className="mb-12 grid grid-cols-2 gap-4 md:grid-cols-4">
+          {capabilities.map((cap) => (
+            <div key={cap.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
+              <div className="text-3xl font-bold text-white">{cap.metric}</div>
+              <div className="mt-1 text-xs uppercase tracking-wider text-white/50">{cap.label}</div>
+            </div>
+          ))}
+        </div>
         <div className="max-w-3xl">
           <p className="text-xs font-medium uppercase tracking-[0.24em] text-white/45">
             Featured Systems
@@ -283,9 +300,25 @@ function Systems() {
 }
 
 function Technology() {
+  const [activeTab, setActiveTab] = useState('simulation');
+
   return (
     <section id="technology" className="px-6 py-20">
       <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[0.92fr_1.08fr]">
+        <div className="flex gap-2 md:hidden">
+          <button 
+            onClick={() => setActiveTab('simulation')}
+            className={`rounded-full px-4 py-2 text-sm ${activeTab === 'simulation' ? 'bg-white/10 text-white' : 'text-white/60'}`}
+          >
+            Simulation
+          </button>
+          <button 
+            onClick={() => setActiveTab('architecture')}
+            className={`rounded-full px-4 py-2 text-sm ${activeTab === 'architecture' ? 'bg-white/10 text-white' : 'text-white/60'}`}
+          >
+            Architecture
+          </button>
+        </div>
         <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl">
           <p className="text-xs font-medium uppercase tracking-[0.24em] text-white/45">
             Technology
@@ -359,6 +392,33 @@ function Applications() {
               title={application.title}
               copy={application.description}
             />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Partners() {
+  const partners = [
+    { name: "Noaerth", role: "Strategic Partner" },
+    { name: "DARPA", role: "Research Partner" },
+    { name: "MIT", role: "Academic Partner" },
+    { name: "Shell", role: "Industry Partner" },
+  ];
+
+  return (
+    <section className="px-6 py-12">
+      <div className="mx-auto max-w-7xl">
+        <p className="text-xs font-medium uppercase tracking-[0.24em] text-white/45">
+          Strategic Partners
+        </p>
+        <div className="mt-8 grid grid-cols-2 gap-6 md:grid-cols-4">
+          {partners.map((partner) => (
+            <div key={partner.name} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center">
+              <div className="text-xl font-medium text-white">{partner.name}</div>
+              <div className="mt-2 text-sm text-white/50">{partner.role}</div>
+            </div>
           ))}
         </div>
       </div>
