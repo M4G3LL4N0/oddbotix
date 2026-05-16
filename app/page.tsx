@@ -1,805 +1,347 @@
 "use client";
 
-import { useState } from "react";
-import type { ReactNode, ComponentType } from "react";
-import dynamic from 'next/dynamic';
-import Image from 'next/image';
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   ArrowRight,
   Cpu,
+  Factory,
+  Map,
+  Menu,
   Radar,
-  Shield,
+  ScanSearch,
+  ShieldAlert,
   Waypoints,
-  ScanLine,
-  Move3D,
+  X,
 } from "lucide-react";
+import Footer from "./footer";
 
-const features = [
+const navItems = [
+  ["About", "/about"],
+  ["Systems", "/systems"],
+  ["Technology", "/technology"],
+  ["Applications", "/applications"],
+  ["Mission", "/mission"],
+  ["Investors", "/investors"],
+  ["Contact", "/contact"],
+];
+
+const systems = [
   {
-    title: "Abnormal Locomotion",
-    description:
-      "Movement strategies designed beyond wheels, tracks, and standard humanoid assumptions.",
-    icon: Move3D,
+    name: "OBX-1",
+    title: "Confined-Space Crawler",
+    environment: "Pipes, tunnels, voids, collapsed interiors",
+    icon: ScanSearch,
   },
   {
-    title: "Adaptive Structures",
-    description:
-      "Reconfigurable robotic architectures that shift posture, geometry, and access logic mid-mission.",
+    name: "OBX-2",
+    title: "Adaptive Terrain Unit",
+    environment: "Unstable ground, rubble, industrial terrain",
     icon: Waypoints,
   },
   {
-    title: "Confined-Space Intelligence",
-    description:
-      "Systems designed for narrow, unstable, hazardous, and information-poor environments.",
-    icon: Shield,
+    name: "OBX-3",
+    title: "Hazard Reconnaissance System",
+    environment: "Visual, thermal, and environmental intelligence",
+    icon: ShieldAlert,
   },
   {
-    title: "Motion Engine",
-    description:
-      "A control layer for discovering, refining, and deploying novel machine movement in the field.",
-    icon: Cpu,
+    name: "OBX-4",
+    title: "Subterranean Mapping Platform",
+    environment: "Underground infrastructure and hard-access networks",
+    icon: Map,
+  },
+  {
+    name: "OBX-5",
+    title: "Remote Intelligence Unit",
+    environment: "Delayed-access sensing and remote awareness",
+    icon: Radar,
   },
 ];
 
-const applications = [
-  {
-    title: "Industrial Inspection",
-    description:
-      "Navigate constrained interiors, hazardous corridors, and difficult access points inside critical infrastructure.",
-  },
-  {
-    title: "Disaster Response",
-    description:
-      "Map unstable environments, enter compromised spaces, and capture intelligence where conventional machines fail.",
-  },
-  {
-    title: "Defense Reconnaissance",
-    description:
-      "Deploy into uncertain terrain and geometry for high-risk, high-value information gathering.",
-  },
-  {
-    title: "Subterranean Systems",
-    description:
-      "Operate across tunnels, pipes, voids, underground infrastructure, and inaccessible networks.",
-  },
+const proofPoints = [
+  "Mission-oriented robotic systems",
+  "Adaptive body logic",
+  "Simulation-to-field learning",
+  "Deployment telemetry",
+  "Motion policy library",
+  "Future licensing and OEM paths",
 ];
 
-const architectureBlocks = [
-  {
-    title: "Locomotion Models",
-    items: ["Crawl", "Twist", "Spiral", "Asymmetric gait", "Recovery states"],
-  },
-  {
-    title: "Body Logic",
-    items: [
-      "Soft-rigid hybrid",
-      "Segmented geometry",
-      "Variable posture",
-      "Reorientation",
-      "Payload-aware balance",
-    ],
-  },
-  {
-    title: "Mission Stack",
-    items: [
-      "Thermal sensing",
-      "Vision systems",
-      "Mapping",
-      "Environmental data",
-      "Operator assist",
-    ],
-  },
-  {
-    title: "Platform Advantage",
-    items: [
-      "Training flywheel",
-      "Field telemetry",
-      "Policy library",
-      "Future licensing",
-      "OEM potential",
-    ],
-  },
-];
+export default function Page() {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-import { BackgroundLayers } from './about/page';
-import Footer from './footer';
-import Partners from './partners/page';
-import { Applications } from './applications/page';
-import { TechnologySection } from './technology/page';
-import { ThesisSection } from './thesis/page';
-import { FinalCta } from './final-cta';
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
-// Use components already defined in this file
-const Hero = LocalHero;
-const SystemsSection = LocalSystems;
-const CoreTechnologies = CoreTechnologies;
-
-export default function HomePage() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#050816] text-white">
+    <main className="min-h-screen overflow-x-hidden text-white motion-fade-up">
       <BackgroundLayers />
 
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050816]/70 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <a href="/" className="text-lg font-semibold tracking-tight text-white">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/55 backdrop-blur-xl backdrop-saturate-150">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3.5 sm:px-6">
+          <Link href="/" className="text-lg font-semibold tracking-tight text-white" onClick={() => setMenuOpen(false)}>
             OddBotix
-          </a>
+          </Link>
 
-          <nav className="hidden items-center gap-6 text-sm text-white/70 md:flex">
-            <a href="/systems" className="transition hover:text-white">
-              Systems
-            </a>
-            <a href="/technology" className="transition hover:text-white">
-              Technology
-            </a>
-            <a href="/applications" className="transition hover:text-white">
-              Applications
-            </a>
-            <a href="/thesis" className="transition hover:text-white">
-              Thesis
-            </a>
-            <a href="/investors" className="transition hover:text-white">
-              Investors
-            </a>
+          <nav className="hidden items-center gap-7 text-sm text-white/68 lg:flex">
+            {navItems.map(([label, href]) => (
+              <Link key={href} href={href} className="transition hover:text-white">
+                {label}
+              </Link>
+            ))}
           </nav>
 
-          <a
-            href="/contact"
-            className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/15"
-          >
-            Request Access
-          </a>
+          <div className="flex items-center gap-2">
+            <Link
+              href="/contact"
+              className="hidden items-center rounded-full border border-white/15 bg-white/[0.08] px-4 py-2 text-sm font-medium text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition hover:bg-white/15 sm:inline-flex"
+            >
+              Request Access
+            </Link>
+            <button
+              type="button"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/12 bg-white/[0.06] text-white transition hover:border-cyan-300/35 hover:bg-white/[0.1] lg:hidden"
+              aria-expanded={menuOpen}
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
+
+        {menuOpen ? (
+          <div className="border-t border-white/10 bg-slate-950/90 backdrop-blur-xl lg:hidden">
+            <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-3 sm:px-6">
+              {navItems.map(([label, href]) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="rounded-xl px-3 py-2.5 text-sm text-white/75 transition hover:bg-white/[0.06] hover:text-white"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {label}
+                </Link>
+              ))}
+              <Link
+                href="/contact"
+                className="mt-2 inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.08] px-4 py-2.5 text-sm font-medium text-white"
+                onClick={() => setMenuOpen(false)}
+              >
+                Request Access
+              </Link>
+              <p className="px-3 pt-2 text-[11px] leading-relaxed text-white/45">
+                Robotics concepts shown here are engineering narratives for planning — not field-certified
+                systems or operational guarantees.
+              </p>
+            </nav>
+          </div>
+        ) : null}
       </header>
 
-      <Hero />
-      <SystemsSection />
-      <CoreTechnologies />
-      <TechnologySection />
-      <Applications />
-      <Partners />
-      <ThesisSection />
-      <FinalCta />
+      <section className="relative px-6 pb-16 pt-20 md:pb-24 md:pt-28">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.02fr_0.98fr]">
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.65 }}
+              className="inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.24em] text-cyan-200"
+            >
+              Noaerth portfolio company
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.75, delay: 0.05 }}
+              className="mt-8 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl"
+            >
+              Movement intelligence for places conventional robots fail.
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.75, delay: 0.12 }}
+              className="mt-8 max-w-3xl text-lg leading-8 text-white/68 sm:text-xl"
+            >
+              OddBotix is an experimental robotics venture building abnormal
+              locomotion systems, adaptive machine movement, and a motion stack
+              for constrained, hazardous, subterranean, and high-complexity environments.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.75, delay: 0.18 }}
+              className="mt-10 flex flex-wrap gap-4"
+            >
+              <Link
+                href="/systems"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-400 via-pink-400 to-violet-400 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_40px_rgba(244,114,182,0.22)] transition hover:scale-[1.02]"
+              >
+                Explore Systems
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/technology"
+                className="inline-flex items-center rounded-full border border-white/15 bg-white/6 px-6 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/10"
+              >
+                View Technology
+              </Link>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.85, delay: 0.1 }}
+            className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#09101f] p-6 shadow-[0_30px_120px_rgba(0,0,0,0.35)]"
+          >
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.22),transparent_24%),radial-gradient(circle_at_85%_20%,rgba(168,85,247,0.18),transparent_28%),radial-gradient(circle_at_65%_85%,rgba(249,115,22,0.16),transparent_28%)]" />
+            <div className="relative rounded-[1.5rem] border border-white/10 bg-black/30 p-5">
+              <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.24em] text-white/40">
+                    System Family
+                  </p>
+                  <h2 className="mt-2 text-2xl font-semibold tracking-tight">
+                    OBX mission stack
+                  </h2>
+                </div>
+                <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-3 text-cyan-200">
+                  <Cpu className="h-5 w-5" />
+                </div>
+              </div>
+
+              <div className="mt-6 grid gap-3">
+                {systems.map((system) => {
+                  const Icon = system.icon;
+
+                  return (
+                    <Link
+                      key={system.name}
+                      href={`/systems/${system.name.toLowerCase()}`}
+                      className="group grid grid-cols-[auto_1fr_auto] items-center gap-4 rounded-[1.25rem] border border-white/10 bg-white/[0.045] p-4 transition hover:border-cyan-300/25 hover:bg-white/[0.07]"
+                    >
+                      <span className="rounded-xl border border-white/10 bg-white/8 p-2 text-cyan-200">
+                        <Icon className="h-4 w-4" />
+                      </span>
+                      <span>
+                        <span className="block text-sm font-semibold text-white">
+                          {system.name} · {system.title}
+                        </span>
+                        <span className="mt-1 block text-xs leading-5 text-white/52">
+                          {system.environment}
+                        </span>
+                      </span>
+                      <ArrowRight className="h-4 w-4 text-white/35 transition group-hover:text-white/75" />
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="px-6 py-16">
+        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl">
+            <p className="text-xs font-medium uppercase tracking-[0.24em] text-white/45">
+              Category Thesis
+            </p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
+              Movement is the next control layer in robotics.
+            </h2>
+            <p className="mt-6 text-base leading-8 text-white/64">
+              Robotics usually begins with familiar forms: wheels, tracks, arms,
+              humanoid templates. OddBotix begins with environmental constraints:
+              access geometry, instability, risk, sensing limits, and mission intent.
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {proofPoints.map((point) => (
+              <div
+                key={point}
+                className="rounded-[1.5rem] border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.03] p-5"
+              >
+                <div className="mb-5 h-px w-14 bg-gradient-to-r from-cyan-300 via-violet-300 to-orange-300" />
+                <p className="text-sm font-medium leading-7 text-white/78">{point}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-16">
+        <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-3">
+          <FeaturePanel
+            icon={<Factory className="h-5 w-5" />}
+            title="Industrial access"
+            copy="Infrastructure operators need machines that can enter pipes, voids, rubble, and inspection paths without remaking the environment first."
+          />
+          <FeaturePanel
+            icon={<ShieldAlert className="h-5 w-5" />}
+            title="Hazard intelligence"
+            copy="Dangerous zones require remote visual, thermal, and environmental awareness before people or larger systems can safely enter."
+          />
+          <FeaturePanel
+            icon={<Waypoints className="h-5 w-5" />}
+            title="Platform expansion"
+            copy="Each mission system can feed a broader library of motion policies, deployment telemetry, and future OEM motion intelligence."
+          />
+        </div>
+      </section>
+
+      <section className="px-6 pb-24 pt-12">
+        <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-gradient-to-r from-white/[0.05] to-white/[0.03] p-10 backdrop-blur-xl">
+          <div className="max-w-3xl">
+            <p className="text-xs font-medium uppercase tracking-[0.24em] text-white/45">
+              Build Direction
+            </p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
+              A serious robotics skunkworks with a platform path.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-white/65">
+              OddBotix is being shaped for pilot partners, strategic robotics
+              collaborators, and investors who understand that physical intelligence
+              starts with how machines move.
+            </p>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-400 via-pink-400 to-violet-400 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_40px_rgba(244,114,182,0.22)] transition hover:scale-[1.02]"
+            >
+              Contact OddBotix
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/investors"
+              className="inline-flex items-center rounded-full border border-white/15 bg-white/6 px-6 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/10"
+            >
+              Investor Narrative
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </main>
   );
 }
 
-function LocalHero() {
-  return (
-    <section className="relative">
-      <div className="mx-auto grid min-h-[88vh] max-w-7xl items-center gap-14 px-6 py-20 md:grid-cols-[1.08fr_0.92fr]">
-        <div>
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-cyan-200"
-          >
-            Experimental Robotics Venture
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 0.85, 
-              delay: 0.08,
-              type: "spring",
-              stiffness: 50,
-              damping: 10
-            }}
-            className="mt-8 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl"
-          >
-            Movement intelligence for impossible environments
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, delay: 0.16 }}
-            className="mt-8 max-w-2xl text-lg leading-8 text-white/68 sm:text-xl"
-          >
-            OddBotix develops adaptive motion systems for hazardous, constrained, and high-complexity operational environments where conventional robotics fails.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, delay: 0.24 }}
-            className="mt-10 flex flex-wrap items-center gap-4"
-          >
-            <a
-              href="#systems"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-400 via-pink-400 to-violet-400 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_40px_rgba(244,114,182,0.28)] transition hover:scale-[1.02]"
-            >
-              View Systems
-              <ArrowRight className="h-4 w-4" />
-            </a>
-
-            <a
-              href="#technology"
-              className="inline-flex items-center rounded-full border border-white/15 bg-white/6 px-6 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/10"
-            >
-              Explore Technology
-            </a>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, delay: 0.32 }}
-            className="mt-14 grid max-w-2xl grid-cols-1 gap-4 sm:grid-cols-3"
-          >
-            <Metric label="Movement class" value="Nonstandard" />
-            <Metric label="Target environments" value="High-risk" />
-            <Metric label="Positioning" value="Deep-tech" />
-          </motion.div>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.12 }}
-          className="relative"
-        >
-          <HeroPanel />
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-const SystemsNav = () => {
-  return (
-    <div className="mt-20 grid grid-cols-2 gap-4 md:grid-cols-4">
-      {capabilities.map((cap) => (
-        <div 
-          key={cap.label} 
-          className="rounded-xl border border-white/10 bg-white/[0.03] p-4 text-center"
-        >
-          <div className="text-3xl font-bold text-white">{cap.metric}</div>
-          <div className="mt-1 text-xs uppercase tracking-wider text-white/50">
-            {cap.label}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function LocalSystems() {
-  const capabilities = [
-    { metric: "95%", label: "Obstacle Navigation Success" },
-    { metric: "72h", label: "Continuous Operation" },
-    { metric: "40cm", label: "Minimum Passage Width" },
-    { metric: "85°", label: "Maximum Incline" },
-  ];
-
-  const featuredSystems = [
-    {
-      id: "obx-1",
-      name: "OBX-1",
-      description: "Compact inspection system for confined spaces",
-      image: "/systems/obx-1.jpg",
-      specs: [
-        { label: "Weight", value: "4.2 kg" },
-        { label: "Dimensions", value: "40 × 25 × 15 cm" },
-        { label: "Payload", value: "1.5 kg" },
-        { label: "Runtime", value: "6 hours" }
-      ]
-    },
-    {
-      id: "obx-2", 
-      name: "OBX-2",
-      description: "Mid-size platform for industrial inspection",
-      image: "/systems/obx-2.jpg",
-      specs: [
-        { label: "Weight", value: "8.5 kg" },
-        { label: "Dimensions", value: "60 × 40 × 25 cm" },
-        { label: "Payload", value: "3.2 kg" },
-        { label: "Runtime", value: "8 hours" }
-      ]
-    },
-    {
-      id: "obx-3",
-      name: "OBX-3",
-      description: "Heavy-duty system for complex environments",
-      image: "/systems/obx-3.jpg",
-      specs: [
-        { label: "Weight", value: "15 kg" },
-        { label: "Dimensions", value: "80 × 50 × 35 cm" },
-        { label: "Payload", value: "6 kg" },
-        { label: "Runtime", value: "12 hours" }
-      ]
-    }
-  ];
-
-  return (
-    <section id="systems" className="relative px-6 pb-8">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-20">
-          <p className="text-xs font-medium uppercase tracking-[0.24em] text-white/45">
-            Product Line
-          </p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
-            Engineered for extreme environments
-          </h2>
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-white/65">
-            Our systems are designed to operate where conventional robotics fail,
-            combining adaptive structures with intelligent motion control.
-          </p>
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-3">
-          {featuredSystems.map((system) => (
-            <div 
-              key={system.id}
-              className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.03] p-6"
-            >
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.16),transparent_40%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_36%)] opacity-70 transition duration-300 group-hover:opacity-100" />
-              
-              <div className="relative h-64 rounded-[1.5rem] bg-black/20">
-                <img
-                  src={system.image}
-                  alt={system.name}
-                  width={400}
-                  height={400}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-
-              <div className="mt-6">
-                <h3 className="text-2xl font-semibold text-white">{system.name}</h3>
-                <p className="mt-2 text-sm leading-7 text-white/62">
-                  {system.description}
-                </p>
-
-                <div className="mt-6 grid grid-cols-2 gap-4">
-                  {system.specs.map((spec) => (
-                    <div key={spec.label} className="rounded-xl border border-white/8 bg-black/20 px-3 py-2">
-                      <div className="text-xs text-white/50">{spec.label}</div>
-                      <div className="mt-1 text-sm font-medium text-white">{spec.value}</div>
-                    </div>
-                  ))}
-                </div>
-
-                <a
-                  href={`/systems/${system.id}`}
-                  className="mt-6 inline-flex w-full items-center justify-center rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/15"
-                >
-                  Learn More
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="mt-20">
-      <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-white/[0.045] p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_30px_100px_rgba(0,0,0,0.35)] backdrop-blur-xl md:p-10">
-        <div className="mb-12 grid grid-cols-2 gap-4 md:grid-cols-4">
-          {capabilities.map((cap) => (
-            <div key={cap.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
-              <div className="text-3xl font-bold text-white">{cap.metric}</div>
-              <div className="mt-1 text-xs uppercase tracking-wider text-white/50">{cap.label}</div>
-            </div>
-          ))}
-        </div>
-        <div className="max-w-3xl">
-          <p className="text-xs font-medium uppercase tracking-[0.24em] text-white/45">
-            Featured Systems
-          </p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
-            Nonstandard locomotion systems
-          </h2>
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-white/65">
-            OddBotix combines experimental body architectures, motion control
-            systems, simulation-driven learning, and mission intelligence into a
-            single premium venture layer.
-          </p>
-        </div>
-
-        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {features.map((feature) => {
-            const Icon = feature.icon;
-
-            return (
-              <div
-                key={feature.title}
-                className="group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.03] p-6"
-              >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.16),transparent_40%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_36%)] opacity-70 transition duration-300 group-hover:opacity-100" />
-                <div className="relative">
-                  <div className="inline-flex rounded-2xl border border-white/12 bg-white/8 p-3 text-cyan-200">
-                    <Icon className="h-5 w-5" />
-                  </div>
-
-                  <h3 className="mt-5 text-xl font-semibold text-white">
-                    {feature.title}
-                  </h3>
-
-                  <p className="mt-3 text-sm leading-7 text-white/62">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-      </div>
-    </section>
-  );
-}
-
-function CoreTechnologies() {
-  const technologies = [
-    {
-      title: "Adaptive Motion Engine",
-      description: "Real-time posture optimization and gait adaptation",
-      icon: Move3D,
-      gradient: "from-cyan-400/10 to-violet-400/10"
-    },
-    {
-      title: "Simulation Stack",
-      description: "High-fidelity physics modeling for movement discovery",
-      icon: Radar,
-      gradient: "from-orange-400/10 to-pink-400/10"
-    },
-    {
-      title: "Field Intelligence",
-      description: "Onboard environmental mapping and terrain analysis",
-      icon: ScanLine,
-      gradient: "from-violet-400/10 to-cyan-400/10"
-    },
-    {
-      title: "Hybrid Architecture",
-      description: "Soft-rigid body systems for extreme adaptability",
-      icon: Waypoints,
-      gradient: "from-pink-400/10 to-orange-400/10"
-    }
-  ];
-
-  return (
-    <section className="px-6 py-20">
-      <div className="mx-auto max-w-7xl">
-        <div className="max-w-3xl">
-          <p className="text-xs font-medium uppercase tracking-[0.24em] text-white/45">
-            Core Technologies
-          </p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
-            The technical edge enabling impossible movement
-          </h2>
-        </div>
-
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {technologies.map((tech) => (
-            <div 
-              key={tech.title}
-              className={`group relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-b ${tech.gradient} p-6 backdrop-blur-xl`}
-            >
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_40%)] opacity-50 transition duration-300 group-hover:opacity-100" />
-              <div className="relative">
-                <div className="inline-flex rounded-2xl border border-white/12 bg-white/8 p-3 text-white">
-                  <tech.icon className="h-5 w-5" />
-                </div>
-                <h3 className="mt-5 text-xl font-semibold text-white">
-                  {tech.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-white/62">
-                  {tech.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function LocalTechnology() {
-  const [activeTab, setActiveTab] = useState('simulation');
-
-  return (
-    <section id="technology" className="px-6 py-20">
-      <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[0.92fr_1.08fr]">
-        <div className="flex gap-2 md:hidden">
-          <button 
-            onClick={() => setActiveTab('simulation')}
-            className={`rounded-full px-4 py-2 text-sm ${activeTab === 'simulation' ? 'bg-white/10 text-white' : 'text-white/60'}`}
-          >
-            Simulation
-          </button>
-          <button 
-            onClick={() => setActiveTab('architecture')}
-            className={`rounded-full px-4 py-2 text-sm ${activeTab === 'architecture' ? 'bg-white/10 text-white' : 'text-white/60'}`}
-          >
-            Architecture
-          </button>
-        </div>
-        <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl">
-          <p className="text-xs font-medium uppercase tracking-[0.24em] text-white/45">
-            Technology
-          </p>
-
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white">
-            Proprietary motion intelligence as the core IP
-          </h2>
-
-          <p className="mt-5 text-base leading-8 text-white/65">
-            The long-term advantage is not just unusual hardware. It is a system
-            that discovers, refines, simulates, transfers, and deploys motion logic
-            across environments, payloads, and future robot classes.
-          </p>
-
-          <div className="mt-8 space-y-4">
-            <TechRow
-              icon={<Radar className="h-5 w-5" />}
-              title="Simulation-first discovery"
-              copy="Search large movement spaces before physical deployment."
-            />
-            <TechRow
-              icon={<ScanLine className="h-5 w-5" />}
-              title="Real-world feedback loop"
-              copy="Use field telemetry to improve motion policies over time."
-            />
-            <TechRow
-              icon={<Cpu className="h-5 w-5" />}
-              title="Software-defined robotics"
-              copy="Make locomotion, posture, and adaptation part of the stack."
-            />
-          </div>
-        </div>
-
-        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#09101f] p-8">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.24),transparent_24%),radial-gradient(circle_at_80%_30%,rgba(168,85,247,0.2),transparent_30%),radial-gradient(circle_at_60%_80%,rgba(249,115,22,0.18),transparent_26%)]" />
-          <div className="relative">
-            <p className="text-xs font-medium uppercase tracking-[0.24em] text-white/45">
-              Motion Architecture
-            </p>
-
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              {architectureBlocks.map((block) => (
-                <TechBlock key={block.title} title={block.title} items={block.items} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Applications() {
-  return (
-    <section id="applications" className="px-6 pb-20">
-      <div className="mx-auto max-w-7xl">
-        <div className="max-w-3xl">
-          <p className="text-xs font-medium uppercase tracking-[0.24em] text-white/45">
-            Applications
-          </p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
-            High-value applications where conventional robotics cannot operate
-          </h2>
-        </div>
-
-        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {applications.map((application) => (
-            <ApplicationCard
-              key={application.title}
-              title={application.title}
-              copy={application.description}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-
-function LocalThesis() {
-  return (
-    <section id="thesis" className="px-6 pb-20">
-      <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-gradient-to-r from-white/[0.05] to-white/[0.03] p-10 backdrop-blur-xl">
-        <div className="max-w-4xl">
-          <p className="text-xs font-medium uppercase tracking-[0.24em] text-white/45">
-            Venture Thesis
-          </p>
-
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
-            Movement intelligence is the next trillion-dollar robotics category
-          </h2>
-
-          <p className="mt-6 text-lg leading-8 text-white/65">
-            Robotics has spent years optimizing familiar body plans for familiar
-            environments. OddBotix is built around a different assumption:
-            difficult environments do not reward conventional motion.
-          </p>
-
-          <p className="mt-4 text-lg leading-8 text-white/65">
-            The long-term winners will combine adaptive structures, novel movement
-            models, simulation-driven control, and field learning into one platform
-            that can operate where other machines stall, break, or never enter.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function FinalCta() {
-  return (
-    <section id="contact" className="px-6 pb-24">
-      <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-gradient-to-r from-white/[0.05] to-white/[0.03] p-10 backdrop-blur-xl">
-        <div className="max-w-3xl">
-          <p className="text-xs font-medium uppercase tracking-[0.24em] text-white/45">
-            Contact
-          </p>
-
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
-            First-mover advantage in nonstandard locomotion robotics
-          </h2>
-
-          <p className="mt-5 text-lg leading-8 text-white/65">
-            For pilots, venture conversations, strategic partnerships, or Noaerth
-            portfolio integration, this is the entry point.
-          </p>
-        </div>
-
-        <div className="mt-8 flex flex-wrap gap-4">
-          <a
-            href="/contact"
-            className="inline-flex items-center rounded-full bg-gradient-to-r from-orange-400 via-pink-400 to-violet-400 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_40px_rgba(244,114,182,0.22)] transition hover:scale-[1.02]"
-          >
-            Contact the venture
-          </a>
-
-          <a
-            href="https://noaerth.com"
-            className="inline-flex items-center rounded-full border border-white/15 bg-white/6 px-6 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/10"
-          >
-            Back to Noaerth
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-
-function BackgroundLayers() {
-  return (
-    <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(40,80,180,0.18),transparent_35%),linear-gradient(180deg,#040714_0%,#050816_45%,#040713_100%)]" />
-      <div className="absolute left-[-12rem] top-[-10rem] h-[34rem] w-[34rem] rounded-full bg-cyan-400/10 blur-[120px]" />
-      <div className="absolute right-[-10rem] top-[4rem] h-[30rem] w-[30rem] rounded-full bg-violet-500/10 blur-[120px]" />
-      <div className="absolute bottom-[-12rem] left-[20%] h-[28rem] w-[28rem] rounded-full bg-orange-400/8 blur-[120px]" />
-      <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.18)_1px,transparent_1px)] [background-size:80px_80px]" />
-    </div>
-  );
-}
-
-function HeroPanel() {
-  return (
-    <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0.04))] p-5 shadow-[0_20px_80px_rgba(0,0,0,0.42)] backdrop-blur-2xl">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(56,189,248,0.22),transparent_22%),radial-gradient(circle_at_70%_28%,rgba(249,115,22,0.18),transparent_24%),radial-gradient(circle_at_62%_72%,rgba(168,85,247,0.18),transparent_26%)]" />
-
-      <div className="relative rounded-[1.5rem] border border-white/10 bg-[#07101f]/90 p-6">
-        <div className="flex items-center justify-between">
-          <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs font-medium text-cyan-100">
-            Robotics / Infrastructure
-          </div>
-          <div className="text-xs uppercase tracking-[0.2em] text-white/35">
-            Prototype
-          </div>
-        </div>
-
-        <div className="mt-8">
-          <div className="relative h-[360px] overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(180deg,#09101f_0%,#071524_100%)]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(34,211,238,0.18),transparent_22%),radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.16),transparent_18%),radial-gradient(circle_at_68%_70%,rgba(168,85,247,0.16),transparent_20%)] opacity-80" />
-
-            <div className="absolute left-1/2 top-1/2 h-[240px] w-[240px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-300/10 bg-cyan-300/5 blur-sm" />
-
-            <div className="absolute left-1/2 top-1/2 h-[200px] w-[200px] -translate-x-1/2 -translate-y-1/2">
-              <div className="absolute left-1/2 top-1/2 h-[8px] w-[8px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-200 shadow-[0_0_24px_rgba(165,243,252,0.9)]" />
-
-              <div className="absolute left-[22%] top-[30%] h-[72px] w-[8px] rotate-[-24deg] rounded-full bg-gradient-to-b from-cyan-200/80 to-cyan-400/10 shadow-[0_0_20px_rgba(34,211,238,0.35)]" />
-              <div className="absolute left-[60%] top-[28%] h-[84px] w-[8px] rotate-[28deg] rounded-full bg-gradient-to-b from-violet-200/80 to-violet-400/10 shadow-[0_0_20px_rgba(167,139,250,0.35)]" />
-              <div className="absolute left-[30%] top-[58%] h-[78px] w-[8px] rotate-[34deg] rounded-full bg-gradient-to-b from-orange-200/80 to-orange-400/10 shadow-[0_0_20px_rgba(251,146,60,0.35)]" />
-              <div className="absolute left-[58%] top-[56%] h-[70px] w-[8px] rotate-[-36deg] rounded-full bg-gradient-to-b from-cyan-200/80 to-cyan-400/10 shadow-[0_0_20px_rgba(34,211,238,0.35)]" />
-
-              <div className="absolute left-[18%] top-[48%] h-[2px] w-[72px] rotate-[12deg] bg-white/20" />
-              <div className="absolute left-[52%] top-[48%] h-[2px] w-[58px] rotate-[-8deg] bg-white/20" />
-              <div className="absolute left-[36%] top-[26%] h-[2px] w-[54px] rotate-[28deg] bg-white/20" />
-              <div className="absolute left-[34%] top-[68%] h-[2px] w-[54px] rotate-[-24deg] bg-white/20" />
-            </div>
-
-            <div className="absolute bottom-4 left-4 right-4 rounded-[1.25rem] border border-white/10 bg-black/30 p-4 backdrop-blur-lg">
-              <div className="text-sm font-semibold text-white">
-                Experimental motion interface
-              </div>
-              <div className="mt-1 text-sm text-white/60">
-                Premium venture concept preview for the Noaerth portfolio layer.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-interface MetricProps {
-  label: string;
-  value: string;
-}
-
-interface TechRowProps {
-  icon: ReactNode;
-  title: string;
-  copy: string;
-}
-
-interface TechBlockProps {
-  title: string;
-  items: string[];
-}
-
-interface ApplicationCardProps {
-  title: string;
-  copy: string;
-}
-
-interface SystemSpec {
-  id: string;
-  name: string;
-  description: string;
-  image: string;
-  specs: {
-    label: string;
-    value: string;
-  }[];
-}
-
-interface Technology {
-  title: string;
-  description: string;
-  icon: ComponentType<{ className?: string }>;
-  gradient: string;
-}
-
-interface SystemSpec {
-  id: string;
-  name: string;
-  description: string;
-  image: string;
-  specs: {
-    label: string;
-    value: string;
-  }[];
-}
-
-interface Technology {
-  title: string;
-  description: string;
-  icon: React.ComponentType<{ className?: string }>;
-  gradient: string;
-}
-
-function Metric({ label, value }: MetricProps) {
-  return (
-    <div className="rounded-[1.25rem] border border-white/10 bg-white/[0.04] px-5 py-4 backdrop-blur-lg">
-      <div className="text-xs uppercase tracking-[0.2em] text-white/38">{label}</div>
-      <div className="mt-2 text-lg font-semibold text-white">{value}</div>
-    </div>
-  );
-}
-
-function TechRow({
+function FeaturePanel({
   icon,
   title,
   copy,
@@ -809,51 +351,24 @@ function TechRow({
   copy: string;
 }) {
   return (
-    <div className="flex gap-4 rounded-[1.25rem] border border-white/10 bg-white/[0.035] p-4">
-      <div className="mt-1 text-cyan-200">{icon}</div>
-      <div>
-        <div className="font-medium text-white">{title}</div>
-        <div className="mt-1 text-sm leading-7 text-white/60">{copy}</div>
+    <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/18">
+      <div className="inline-flex rounded-2xl border border-white/12 bg-white/8 p-3 text-cyan-200">
+        {icon}
       </div>
+      <h3 className="mt-6 text-2xl font-semibold tracking-tight text-white">{title}</h3>
+      <p className="mt-4 text-sm leading-7 text-white/62">{copy}</p>
     </div>
   );
 }
 
-function TechBlock({
-  title,
-  items,
-}: {
-  title: string;
-  items: string[];
-}) {
+function BackgroundLayers() {
   return (
-    <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.045] p-5">
-      <div className="text-sm font-semibold text-white">{title}</div>
-      <div className="mt-4 space-y-3">
-        {items.map((item) => (
-          <div
-            key={item}
-            className="rounded-xl border border-white/8 bg-black/20 px-3 py-2 text-sm text-white/65"
-          >
-            {item}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function ApplicationCard({
-  title,
-  copy,
-}: {
-  title: string;
-  copy: string;
-}) {
-  return (
-    <div className="rounded-[1.75rem] border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.03] p-6">
-      <div className="text-xl font-semibold text-white">{title}</div>
-      <div className="mt-3 text-sm leading-7 text-white/62">{copy}</div>
+    <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(40,80,180,0.18),transparent_35%),linear-gradient(180deg,#040714_0%,#050816_45%,#040713_100%)]" />
+      <div className="absolute left-[-12rem] top-[-10rem] h-[34rem] w-[34rem] rounded-full bg-cyan-400/10 blur-[120px]" />
+      <div className="absolute right-[-10rem] top-[4rem] h-[30rem] w-[30rem] rounded-full bg-violet-500/10 blur-[120px]" />
+      <div className="absolute bottom-[-12rem] left-[20%] h-[28rem] w-[28rem] rounded-full bg-orange-400/8 blur-[120px]" />
+      <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.18)_1px,transparent_1px)] [background-size:80px_80px]" />
     </div>
   );
 }
