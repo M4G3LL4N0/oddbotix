@@ -1,11 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Radar, Eye, ScanSearch, Layers3 } from "lucide-react";
+import { SubpageVisual } from "@/components/SubpageVisual";
+import { ArrowRight, Radar, Eye } from "lucide-react";
 
 export default function OBX5Page() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#050816] text-white">
+      <SubpageVisual variant="default" />
       <BackgroundLayers />
 
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050816]/70 backdrop-blur-xl">
@@ -116,7 +118,7 @@ export default function OBX5Page() {
           <div className="mt-8 flex flex-wrap gap-4">
             <a
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-400 via-pink-400 to-violet-400 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_40px_rgba(244,114,182,0.22)] transition hover:scale-[1.02]"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 via-cyan-400 to-violet-400 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_40px_rgba(244,114,182,0.22)] transition hover:scale-[1.02]"
             >
               Contact OddBotix
               <ArrowRight className="h-4 w-4" />

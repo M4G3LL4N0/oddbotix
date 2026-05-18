@@ -1,4 +1,5 @@
 import React from 'react';
+import { SubpageVisual } from "@/components/SubpageVisual";
 
 const BackgroundLayers = () => (
   <div className="fixed inset-0 z-0">
@@ -9,7 +10,9 @@ const BackgroundLayers = () => (
 
 const OBX2Page = () => {
   return (
-    <div className="relative min-h-screen text-white">
+      <>
+      <SubpageVisual variant="default" />
+      <div className="relative min-h-screen text-white">
       <BackgroundLayers />
       
       {/* Hero Section */}
@@ -18,7 +21,7 @@ const OBX2Page = () => {
           <h1 className="text-6xl font-bold mb-4">OBX-2</h1>
           <h2 className="text-3xl font-medium text-gray-300">Adaptive Terrain Unit</h2>
           <p className="mt-6 text-lg text-gray-400 max-w-2xl">
-            The pinnacle of robotic mobility systems, designed for unparalleled performance in the most challenging environments.
+            An adaptive terrain system concept for unstable ground, irregular surfaces, rubble, and industrial environments where movement reliability is the constraint.
           </p>
         </div>
       </section>
@@ -30,11 +33,11 @@ const OBX2Page = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <p className="text-lg text-gray-300 mb-4">
-                The OBX-2 adaptive terrain unit series features our proprietary terrain intelligence system:
+                The OBX-2 adaptive terrain unit series is framed around terrain intelligence and body adaptation:
               </p>
               <ul className="space-y-2 text-gray-300">
-                <li>- Real-time surface classification (16 terrain types)</li>
-                <li>- Dynamic suspension with 200Hz adjustment</li>
+                <li>- Real-time surface classification</li>
+                <li>- Dynamic suspension logic</li>
                 <li>- Predictive gait adaptation</li>
                 <li>- Multi-spectral traction control</li>
               </ul>
@@ -65,19 +68,19 @@ const OBX2Page = () => {
             <div className="p-6 bg-gray-800/50 rounded-lg">
               <h3 className="text-2xl font-bold mb-4">Terrain Mastery</h3>
               <p className="text-gray-300">
-                Conquers slopes up to 45°, navigates loose gravel, sand, and uneven surfaces with precision.
+                Navigates loose, uneven, and shifting surfaces with movement strategies designed for recovery and traction.
               </p>
             </div>
             <div className="p-6 bg-gray-800/50 rounded-lg">
               <h3 className="text-2xl font-bold mb-4">Adaptive Response</h3>
               <p className="text-gray-300">
-                Instantly adjusts suspension and traction based on real-time terrain analysis.
+                Adjusts posture, traction, and movement planning based on terrain feedback.
               </p>
             </div>
             <div className="p-6 bg-gray-800/50 rounded-lg">
               <h3 className="text-2xl font-bold mb-4">All-Weather Operation</h3>
               <p className="text-gray-300">
-                Functions flawlessly in temperatures from -40°C to 60°C, with IP68 waterproof rating.
+                Designed toward field resilience across weather, debris, vibration, and industrial operating constraints.
               </p>
             </div>
           </div>
@@ -104,7 +107,7 @@ const OBX2Page = () => {
               <p className="text-gray-300 mb-6">
                 Disaster zones, search and rescue operations, and hazardous material sites.
               </p>
-              <h3 className="text-2xl font-bold mb-4">Military</h3>
+              <h3 className="text-2xl font-bold mb-4">Defense & Security</h3>
               <p className="text-gray-300">
                 Tactical operations, border patrol, and reconnaissance missions.
               </p>
@@ -159,7 +162,7 @@ const OBX2Page = () => {
             </div>
             <div>
               <p className="text-lg text-gray-300">
-                The OBX-2's AI capabilities provide valuable terrain data to the broader OddBotix ecosystem, enhancing mission planning and execution.
+                The OBX-2's terrain data can feed the broader OddBotix motion stack, improving future mission planning and system design.
               </p>
             </div>
           </div>
@@ -173,12 +176,16 @@ const OBX2Page = () => {
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
             Discover how the OBX-2 can revolutionize your operations. Contact our team for a detailed consultation.
           </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300">
+          <a
+            href="/contact"
+            className="inline-flex rounded-lg bg-blue-600 px-8 py-3 font-bold text-white transition-all duration-300 hover:bg-blue-700"
+          >
             Request Consultation
-          </button>
+          </a>
         </div>
       </section>
     </div>
+  </>
   );
 };
 

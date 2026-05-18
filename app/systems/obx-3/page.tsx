@@ -1,3 +1,4 @@
+import { SubpageVisual } from "@/components/SubpageVisual";
 const BackgroundLayers = () => (
   <div className="absolute inset-0 z-0">
     <div className="absolute inset-0 bg-gradient-to-b from-black/90 to-black/50" />
@@ -7,7 +8,9 @@ const BackgroundLayers = () => (
 
 export default function OBX3Page() {
   return (
-    <div className="relative min-h-screen bg-black text-white">
+      <>
+      <SubpageVisual variant="default" />
+      <div className="relative min-h-screen bg-black text-white">
       <BackgroundLayers />
       
       {/* Hero Section */}
@@ -34,7 +37,7 @@ export default function OBX3Page() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <p className="text-lg leading-relaxed mb-4">
-                The OBX-3 is a cutting-edge reconnaissance platform designed for extreme environment operations. Built with military-grade components and proprietary OddBotix AI, it delivers unparalleled situational awareness in hazardous conditions.
+                The OBX-3 is a hazard reconnaissance system concept for dangerous environments where remote visual, thermal, and environmental awareness can reduce uncertainty before people enter.
               </p>
             </div>
             <div>
@@ -49,7 +52,7 @@ export default function OBX3Page() {
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-white mr-3" />
-                  Real-time threat assessment AI
+                  Environmental risk assessment workflow
                 </li>
               </ul>
             </div>
@@ -71,7 +74,7 @@ export default function OBX3Page() {
             <div>
               <h4 className="text-2xl font-bold mb-4">Hazard Detection</h4>
               <p className="text-gray-300">
-                Chemical, biological, and radiological threat identification with 99.7% accuracy
+                Designed to support chemical, biological, radiological, and environmental risk workflows when validated sensors are integrated
               </p>
             </div>
             <div>
@@ -92,13 +95,13 @@ export default function OBX3Page() {
             <div>
               <h4 className="text-2xl font-bold mb-4">Extreme Conditions</h4>
               <p className="text-gray-300">
-                Rated for operation in temperatures from -40°C to 85°C and winds up to 120 km/h
+                Designed toward operation in heat, contamination, dust, debris, and other field constraints
               </p>
             </div>
             <div>
               <h4 className="text-2xl font-bold mb-4">Hostile Terrain</h4>
               <p className="text-gray-300">
-                Designed for urban, mountainous, and aquatic environments with IP68 rating
+                Designed for rubble, industrial sites, constrained structures, and other high-risk access zones
               </p>
             </div>
           </div>
@@ -110,7 +113,7 @@ export default function OBX3Page() {
         <div className="container mx-auto px-4">
           <h3 className="text-4xl font-bold mb-8">Design Logic</h3>
           <p className="text-lg leading-relaxed max-w-3xl">
-            The OBX-3 was engineered with a singular focus: reliable performance in the most challenging conditions. Every component was selected and tested to exceed military specifications, while the AI core was trained on millions of hours of real-world data to ensure optimal decision-making in critical situations.
+            The OBX-3 design logic starts with the operator's need to understand risk before committing people or larger assets. The system emphasizes durable sensing, constrained movement, and clear field intelligence.
           </p>
         </div>
       </section>
@@ -120,7 +123,7 @@ export default function OBX3Page() {
         <div className="container mx-auto px-4">
           <h3 className="text-4xl font-bold mb-8">Role in OddBotix Platform</h3>
           <p className="text-lg leading-relaxed max-w-3xl">
-            As the reconnaissance backbone of the OddBotix ecosystem, the OBX-3 provides critical intelligence for mission planning and execution. Its data feeds directly into the OddBotix Command Center, enabling real-time strategic decision making across all operational units.
+            As part of the OddBotix ecosystem, OBX-3 is intended to feed field intelligence into mission planning, system selection, and future motion policy refinement.
           </p>
         </div>
       </section>
@@ -133,12 +136,16 @@ export default function OBX3Page() {
             <p className="text-lg mb-8">
               Contact our team to discuss how the OBX-3 can enhance your operations.
             </p>
-            <button className="bg-white text-black px-8 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors">
+            <a
+              href="/contact"
+              className="inline-flex rounded-lg bg-white px-8 py-3 font-medium text-black transition-colors hover:bg-gray-200"
+            >
               Request Consultation
-            </button>
+            </a>
           </div>
         </div>
       </section>
     </div>
-  );
+  </>
+  )
 }

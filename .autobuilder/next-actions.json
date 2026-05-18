@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "project_folder": "/Users/joshuadavis/startups/oddbotix",
+  "startup_name": "OddBotix",
+  "generated_at": "2026-05-07",
+  "tasks": [
+    {
+      "id": "task-001",
+      "priority": "high",
+      "type": "product",
+      "title": "Add product visuals and system comparison sections",
+      "description": "Create stronger visual/product proof for the OBX system family without adding fragile dependencies.",
+      "files_likely_involved": ["app/systems/page.tsx", "app/page.tsx"],
+      "success_criteria": ["systems feel more concrete", "build passes", "no fake claims"],
+      "risk_level": "medium",
+      "estimated_effort": "medium",
+      "blocked_by": []
+    },
+    {
+      "id": "task-002",
+      "priority": "high",
+      "type": "design",
+      "title": "Create reusable but safe visual language for system diagrams",
+      "description": "Improve product communication using Tailwind-only diagram sections or local components.",
+      "files_likely_involved": ["app/technology/page.tsx", "app/platform/page.tsx"],
+      "success_criteria": ["technology story is clearer", "no new dependencies", "build passes"],
+      "risk_level": "medium",
+      "estimated_effort": "medium",
+      "blocked_by": []
+    },
+    {
+      "id": "task-003",
+      "priority": "high",
+      "type": "product",
+      "title": "Standardize OBX detail page templates",
+      "description": "Bring OBX-1 through OBX-5 into one premium detail-page structure while preserving each system purpose.",
+      "files_likely_involved": [
+        "app/systems/obx-1/page.tsx",
+        "app/systems/obx-2/page.tsx",
+        "app/systems/obx-3/page.tsx",
+        "app/systems/obx-4/page.tsx",
+        "app/systems/obx-5/page.tsx"
+      ],
+      "success_criteria": ["system taxonomy is coherent", "detail pages feel premium", "build passes"],
+      "risk_level": "medium",
+      "estimated_effort": "medium",
+      "blocked_by": []
+    },
+    {
+      "id": "task-004",
+      "priority": "medium",
+      "type": "growth",
+      "title": "Integrate OddBotix into Noaerth portfolio",
+      "description": "Add OddBotix card and cross-linking from Noaerth parent site.",
+      "files_likely_involved": [],
+      "success_criteria": ["Noaerth links to OddBotix", "copy is premium", "build passes"],
+      "risk_level": "medium",
+      "estimated_effort": "medium",
+      "blocked_by": ["requires Noaerth repo context"]
+    }
+  ]
+}

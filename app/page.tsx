@@ -1,6 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { HeroProductPanel } from "@/components/HeroProductPanel";
+import { MarketingGraphicsStack } from "@/components/MarketingGraphicsStack";
+import { TrustStrip } from "@/components/TrustStrip";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
@@ -18,6 +21,7 @@ import {
 import Footer from "./footer";
 
 const navItems = [
+  ["Mission Demo", "/demo"],
   ["About", "/about"],
   ["Systems", "/systems"],
   ["Technology", "/technology"],
@@ -81,6 +85,10 @@ export default function Page() {
 
   return (
     <main className="min-h-screen overflow-x-hidden text-white motion-fade-up">
+        <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6">
+          <TrustStrip />
+        </div>
+
       <BackgroundLayers />
 
       <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/55 backdrop-blur-xl backdrop-saturate-150">
@@ -184,11 +192,17 @@ export default function Page() {
               className="mt-10 flex flex-wrap gap-4"
             >
               <Link
+                href="/demo"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 via-cyan-400 to-violet-400 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_40px_rgba(244,114,182,0.22)] transition hover:scale-[1.02]"
+              >
+                Run mission demo
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
                 href="/systems"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-400 via-pink-400 to-violet-400 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_40px_rgba(244,114,182,0.22)] transition hover:scale-[1.02]"
+                className="inline-flex items-center rounded-full border border-white/15 bg-white/6 px-6 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/10"
               >
                 Explore Systems
-                <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/technology"
@@ -321,7 +335,7 @@ export default function Page() {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-400 via-pink-400 to-violet-400 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_40px_rgba(244,114,182,0.22)] transition hover:scale-[1.02]"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 via-cyan-400 to-violet-400 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_40px_rgba(244,114,182,0.22)] transition hover:scale-[1.02]"
             >
               Contact OddBotix
               <ArrowRight className="h-4 w-4" />
@@ -337,6 +351,11 @@ export default function Page() {
       </section>
 
       <Footer />
+    <MarketingGraphicsStack />
+      <section className="mx-auto max-w-7xl px-4 pb-12 pt-4 sm:px-6 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
+        <div />
+        <HeroProductPanel />
+      </section>
     </main>
   );
 }

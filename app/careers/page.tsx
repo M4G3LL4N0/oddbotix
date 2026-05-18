@@ -1,3 +1,4 @@
+import { SubpageVisual } from "@/components/SubpageVisual";
 const BackgroundLayers = () => (
   <>
     <div className="fixed inset-0 bg-black z-[-3]"></div>
@@ -8,7 +9,9 @@ const BackgroundLayers = () => (
 
 export default function CareersPage() {
   return (
-    <div className="min-h-screen text-white">
+      <>
+      <SubpageVisual variant="default" />
+      <div className="min-h-screen text-white">
       <BackgroundLayers />
       
       {/* Hero */}
@@ -17,8 +20,8 @@ export default function CareersPage() {
           Build the Future of Intelligent Motion
         </h1>
         <p className="text-xl text-gray-300 max-w-3xl">
-          At OddBotix, we're engineering robotic systems that perceive, learn,
-          and move with unprecedented intelligence. Join us in defining the next
+          At OddBotix, we're engineering robotic systems that perceive, adapt,
+          and move with mission-aware intelligence. Join us in defining the next
           frontier of autonomous robotics.
         </p>
       </section>
@@ -31,22 +34,22 @@ export default function CareersPage() {
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <p className="text-lg text-gray-300">
-              We're engineering fundamental breakthroughs in robotic motion.
-              When we succeed, these inventions will power entire categories
+              We're engineering meaningful advances in robotic motion.
+              When we succeed, these systems can support entire categories
               of autonomous systems worldwide.
             </p>
             <ul className="space-y-4 text-gray-300">
               <li className="flex items-start">
                 <span className="text-purple-400 mr-2">⚡</span>
-                Work on autonomous systems that require no training data
+                Work on adaptive systems for difficult real-world environments
               </li>
               <li className="flex items-start">
                 <span className="text-purple-400 mr-2">⚡</span>
-                Build with novel sensor modalities never applied to robotics
+                Build with sensing, control, and mechanical architectures designed together
               </li>
               <li className="flex items-start">
                 <span className="text-purple-400 mr-2">⚡</span>
-                Invent solutions with multi-order improvements in efficiency/noise tolerance
+                Invent solutions where robustness matters more than demo polish
               </li>
             </ul>
           </div>
@@ -87,7 +90,7 @@ export default function CareersPage() {
             {[
               {
                 title: "Robotics Engineering",
-                description: "Designing novel mechanical systems that leverage our core motion intelligence breakthroughs"
+                description: "Designing novel mechanical systems around motion intelligence and field constraints"
               },
               {
                 title: "Controls / Motion Intelligence",
@@ -142,14 +145,18 @@ export default function CareersPage() {
         <div className="bg-gradient-to-r from-purple-900/30 to-purple-900/10 border border-purple-900/50 rounded-xl p-12 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Build the Future?</h2>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            We're hiring exceptional engineers to solve problems that shouldn't be possible.
+            We're looking for exceptional engineers and researchers ready to work on the hard parts of adaptive robotics.
             Send us your strongest work.
           </p>
-          <button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:opacity-90 text-white font-medium py-3 px-8 rounded-lg transition-all">
+          <a
+            href="mailto:hello@oddbotix.com?subject=OddBotix%20careers"
+            className="inline-flex rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-3 font-medium text-white transition-all hover:opacity-90"
+          >
             Apply Now
-          </button>
+          </a>
         </div>
       </section>
     </div>
-  );
+  </>
+  )
 }

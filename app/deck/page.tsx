@@ -1,3 +1,4 @@
+import { SubpageVisual } from "@/components/SubpageVisual";
 const BackgroundLayers = () => (
   <div className="fixed inset-0 -z-10">
     <div className="absolute inset-0 bg-black/95 backdrop-blur-[2px]" />
@@ -8,7 +9,9 @@ const BackgroundLayers = () => (
 
 export default function DeckPage() {
   return (
-    <div className="min-h-screen text-white">
+      <>
+      <SubpageVisual variant="default" />
+      <div className="min-h-screen text-white">
       <BackgroundLayers />
       
       <div className="container mx-auto px-4 py-24 max-w-4xl space-y-32">
@@ -63,9 +66,11 @@ export default function DeckPage() {
         <section>
           <h2 className="text-4xl font-bold mb-8">Systems</h2>
           <div className="space-y-4 text-gray-300">
-            <p>OBX-1: Core locomotion platform</p>
-            <p>OBX-2: Adaptive control system</p>
-            <p>OBX-3: Field intelligence layer</p>
+            <p>OBX-1: Confined-Space Crawler</p>
+            <p>OBX-2: Adaptive Terrain Unit</p>
+            <p>OBX-3: Hazard Reconnaissance System</p>
+            <p>OBX-4: Subterranean Mapping Platform</p>
+            <p>OBX-5: Remote Intelligence Unit</p>
           </div>
         </section>
 
@@ -129,5 +134,6 @@ export default function DeckPage() {
         </section>
       </div>
     </div>
-  );
+  </>
+  )
 }

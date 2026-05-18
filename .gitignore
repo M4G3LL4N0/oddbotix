@@ -1,8 +1,6 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
+# Dependencies
+node_modules
+.pnp
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -10,45 +8,74 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
+# Next.js / build output
+.next
+out
+dist
+build
+.turbo
 
-# next.js
-/.next/
-/out/
+# Vercel
+.vercel
+.vercel/cache
 
-# production
-/build
+# Test and coverage output
+coverage
+playwright-report
+test-results
 
-# misc
+# Local caches
+.cache
+.parcel-cache
+
+# System files
 .DS_Store
-*.pem
 
-# debug
+# Logs
+*.log
 npm-debug.log*
+pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# Local environment files
+.env*.local
 
-# vercel
-.vercel
-
-# typescript
+# TypeScript generated files
 *.tsbuildinfo
 next-env.d.ts
+
+# Local assistant artifacts
 .aider*
+
+# --- portfolio private sync ---
+.env
+.env.*
+!.env.example
 node_modules/
 .next/
+out/
 dist/
 build/
 coverage/
+.turbo/
+.cache/
 .vercel/
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.DS_Store
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.sqlite
+*.sqlite3
+*.db
+.local/
+tmp/
+temp/
+

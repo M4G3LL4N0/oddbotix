@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "project_folder": "/Users/joshuadavis/startups/oddbotix",
+  "startup_name": "OddBotix",
+  "last_updated": "2026-05-07",
+  "status": "ready",
+  "build_status": {
+    "pnpm_install": "passed before final cleanup; rerun required because node_modules was intentionally removed",
+    "lint": "passed",
+    "typecheck": "passed via pnpm type-check",
+    "build": "passed",
+    "last_error": ""
+  },
+  "deploy_status": {
+    "vercel_ready": true,
+    "last_deployed": "",
+    "deployment_url": "",
+    "manual_deploy_command": "cd /Users/joshuadavis/startups/oddbotix && pnpm install && pnpm build && vercel --prod"
+  },
+  "disk_status": {
+    "size_before": "532M",
+    "size_after": "3.8M",
+    "cleanup_performed": true,
+    "large_files_flagged": []
+  },
+  "recent_changes": [
+    "Replaced homepage external iframe with native OddBotix product homepage.",
+    "Removed unused Supabase dependency/client and placeholder checkout API route.",
+    "Softened unverifiable public claims across investor, press, careers, roadmap, deck, and OBX detail pages.",
+    "Added missing grid.svg and grid-pattern.svg assets used by local page backgrounds.",
+    "Configured metadataBase and Turbopack root to reduce build warnings.",
+    "Updated .gitignore for pnpm/Next/Vercel/cache hygiene.",
+    "Created RECOVERY_NOTES.md, AUTOBUILDER_FOUNDATION.json, .autobuilder/project-state.json, .autobuilder/next-actions.json, and .autobuilder/guardrails.md."
+  ],
+  "open_issues": [
+    "OBX detail pages should be standardized into a consistent premium template.",
+    "Product proof would improve with real prototype media or clearly labeled concept visuals.",
+    "Contact flow is currently static/mailto rather than a structured inquiry workflow.",
+    "Open Graph image could be upgraded visually."
+  ],
+  "next_actions": [
+    "Add product visuals and system comparison sections.",
+    "Create Tailwind-only diagrams for technology and platform pages.",
+    "Standardize OBX detail page templates.",
+    "Integrate OddBotix into Noaerth portfolio once parent repo context is available."
+  ],
+  "last_agent_notes": "Recovery cycle moved OddBotix from a brittle iframe homepage and mixed generic/unverified copy into a build-green, pnpm-only, static product site with native homepage, cleaner product truth, no unused backend dependency, and durable Autobuilder memory. Final cleanup intentionally removed node_modules and .next after successful validation."
+}

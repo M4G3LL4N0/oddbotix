@@ -1,5 +1,11 @@
 import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const viewport: Viewport = {
   themeColor: '#050816',
@@ -8,6 +14,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.oddbotix.com"),
   title: "OddBotix",
   description: "Premium deep-tech robotics venture focused on abnormal locomotion and motion intelligence",
   openGraph: {
@@ -39,8 +46,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
 }

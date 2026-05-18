@@ -1,3 +1,4 @@
+import { SubpageVisual } from "@/components/SubpageVisual";
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -7,11 +8,14 @@ export const metadata: Metadata = {
 
 function BackgroundLayers() {
   return (
-    <div className="fixed inset-0 -z-10 opacity-30">
+      <>
+      <SubpageVisual variant="about" />
+      <div className="fixed inset-0 -z-10 opacity-30">
       <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black"></div>
-      <div className="absolute inset-0 bg-[url('/grid.svg')] [mask-image:linear-gradient(to_bottom,white_10%,transparent_70%)]"></div>
+      <div className="absolute inset-0 opacity-[0.18] [background-image:linear-gradient(rgba(255,255,255,0.16)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.16)_1px,transparent_1px)] [background-size:80px_80px] [mask-image:linear-gradient(to_bottom,white,transparent)]" />
     </div>
-  )
+    </>
+  );
 }
 
 export default function About() {
@@ -23,11 +27,11 @@ export default function About() {
       <section className="relative h-screen flex flex-col justify-center px-8 sm:px-16 lg:px-24 pt-32 pb-28">
         <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight max-w-6xl">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
-            Code meets locomotion
+            Movement systems for impossible access
           </span>
         </h1>
         <p className="mt-8 text-xl sm:text-2xl text-gray-300 max-w-2xl">
-          OddBotix is redefining movement through abnormal locomotion systems and adaptive motion intelligence.
+          OddBotix is building abnormal locomotion systems and motion intelligence for hazardous, constrained, subterranean, and irregular environments.
         </p>
       </section>
       
@@ -40,7 +44,7 @@ export default function About() {
               Founded in stealth, OddBotix develops advanced motion systems that challenge conventional robotics paradigms.
             </p>
             <p className="text-lg">
-              We specialize in abnormal locomotion - systems that move in unexpected, often biologically-inspired ways to achieve superior performance.
+              We specialize in abnormal locomotion: systems that use geometry, posture, and environment-aware movement to reach places conventional robots struggle to enter.
             </p>
           </div>
           <div className="space-y-6 opacity-90">
@@ -123,9 +127,12 @@ export default function About() {
           <p className="text-xl mb-12 text-gray-300">
             Interested in abnormal locomotion, adaptive systems, or motion intelligence? Reach out to explore collaborations.
           </p>
-          <button className="rounded-full px-8 py-3 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-medium transition-all hover:scale-105">
+          <a
+            href="/contact"
+            className="inline-flex rounded-full bg-gradient-to-r from-purple-500 to-blue-600 px-8 py-3 font-medium text-white transition-all hover:scale-105"
+          >
             Get in touch
-          </button>
+          </a>
         </div>
       </section>
     </div>

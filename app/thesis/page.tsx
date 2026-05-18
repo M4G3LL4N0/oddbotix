@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Move3D, Cpu, Waypoints, Shield } from "lucide-react";
+import { SubpageVisual } from "@/components/SubpageVisual";
+import { ArrowRight, Move3D, Cpu } from "lucide-react";
 
 export default function ThesisPage() {
   return (
@@ -28,6 +29,7 @@ export default function ThesisPage() {
       </header>
 
       <main className="min-h-screen overflow-x-hidden bg-[#050816] text-white">
+      <SubpageVisual variant="default" />
         <section className="relative px-6 py-28">
           <div className="mx-auto max-w-7xl">
             <motion.div
@@ -96,7 +98,7 @@ export default function ThesisPage() {
                 <ul className="mt-6 space-y-3">
                   <li className="flex items-center">
                     <ArrowRight className="mr-2 h-4 w-4 text-primary" />
-                    Proprietary motion policy library
+                    Motion policy library
                   </li>
                   <li className="flex items-center">
                     <ArrowRight className="mr-2 h-4 w-4 text-primary" />
@@ -116,7 +118,7 @@ export default function ThesisPage() {
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-h1 glow">Invest In Movement</h2>
             <p className="mx-auto mt-6 text-lg text-white/60">
-              OddBotix is backed by Noaerth and select strategic investors. We're currently raising our Series A.
+              OddBotix is a Noaerth portfolio company inviting strategic investor and partner conversations around motion intelligence.
             </p>
             <div className="mt-10">
               <a

@@ -1,3 +1,4 @@
+import { SubpageVisual } from "@/components/SubpageVisual";
 const BackgroundLayers = () => (
   <div className="absolute inset-0 -z-10 overflow-hidden">
     <div className="absolute inset-0 bg-gradient-to-b from-gray-950 to-gray-900" />
@@ -8,7 +9,9 @@ const BackgroundLayers = () => (
 
 export default function RoadmapPage() {
   return (
-    <div className="relative min-h-screen">
+      <>
+      <SubpageVisual variant="default" />
+      <div className="relative min-h-screen">
       <BackgroundLayers />
       
       <div className="container mx-auto px-4 py-24 max-w-4xl">
@@ -19,7 +22,7 @@ export default function RoadmapPage() {
           </h1>
           <p className="text-gray-300 text-lg">
             OddBotix is engineering a comprehensive robotics platform that will
-            transform how machines interact with the physical world. Our roadmap
+              improve how machines move through hard physical environments. Our roadmap
             outlines the strategic progression toward this vision.
           </p>
         </section>
@@ -36,7 +39,7 @@ export default function RoadmapPage() {
           </div>
           <p className="text-gray-300 pl-16">
             Establishing the foundational architecture for modular robotics,
-            including hardware abstraction layers, real-time control systems,
+            including OBX system taxonomy, adaptive body logic, sensing plans,
             and safety protocols.
           </p>
         </section>
@@ -69,9 +72,8 @@ export default function RoadmapPage() {
             </h2>
           </div>
           <p className="text-gray-300 pl-16">
-            Implementing field deployment systems with continuous learning
-            capabilities, enabling real-world optimization and adaptation
-            through operational feedback.
+            Developing partner-ready pilot workflows and feedback loops so
+            real-world telemetry can improve future movement policies.
           </p>
         </section>
 
@@ -86,9 +88,8 @@ export default function RoadmapPage() {
             </h2>
           </div>
           <p className="text-gray-300 pl-16">
-            Scaling the platform through licensing agreements and expanding
-            capabilities to serve broader robotics applications across multiple
-            industries.
+            Expanding toward licensing and OEM opportunities once the system
+            family and motion policy library are validated through focused use cases.
           </p>
         </section>
 
@@ -103,12 +104,16 @@ export default function RoadmapPage() {
               systems. Explore partnership opportunities to be part of this
               transformative journey.
             </p>
-            <button className="bg-white text-gray-900 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors">
+            <a
+              href="/contact"
+              className="inline-flex rounded-md bg-white px-6 py-3 font-medium text-gray-900 transition-colors hover:bg-gray-100"
+            >
               Contact Us
-            </button>
+            </a>
           </div>
         </section>
       </div>
     </div>
-  );
+  </>
+  )
 }

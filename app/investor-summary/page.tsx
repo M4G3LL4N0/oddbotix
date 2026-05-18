@@ -1,3 +1,4 @@
+import { SubpageVisual } from "@/components/SubpageVisual";
 import { NextPage } from 'next'
 import Head from 'next/head'
 
@@ -31,9 +32,11 @@ const Tile = ({ children, className = '' }: { children: React.ReactNode; classNa
 const InvestorsPage: NextPage = () => {
   return (
     <>
+    <SubpageVisual variant="default" />
+      <>
       <Head>
         <title>OddBotix | Investor Summary</title>
-        <meta name="description" content="The future of robotics powered by generative AI" />
+        <meta name="description" content="OddBotix investor summary for motion intelligence robotics" />
       </Head>
 
       <div className="relative min-h-screen bg-gradient-to-br from-gray-900 to-black text-white overflow-hidden">
@@ -53,12 +56,18 @@ const InvestorsPage: NextPage = () => {
               Motion intelligence platform for high-complexity environments
             </p>
             <div className="flex gap-4">
-              <button className="px-8 py-3 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full font-medium">
-                Schedule Demo
-              </button>
-              <button className="px-8 py-3 border border-gray-700 rounded-full font-medium hover:bg-white hover:bg-opacity-10 transition">
+              <a
+                href="/contact"
+                className="rounded-full bg-gradient-to-r from-indigo-500 to-blue-500 px-8 py-3 font-medium"
+              >
+                Contact OddBotix
+              </a>
+              <a
+                href="/deck"
+                className="rounded-full border border-gray-700 px-8 py-3 font-medium transition hover:bg-white hover:bg-opacity-10"
+              >
                 Investor Deck
-              </button>
+              </a>
             </div>
           </section>
 
@@ -74,26 +83,26 @@ const InvestorsPage: NextPage = () => {
                   <div className="mt-1 flex-none bg-pink-900 bg-opacity-20 rounded-full p-1.5">
                     <div className="w-2 h-2 bg-pink-400 rounded-full" />
                   </div>
-                  <span>Robotics development is fragmented, specialized, and slow</span>
+                  <span>Robotics still struggles in constrained, hazardous, irregular, and subterranean environments</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="mt-1 flex-none bg-pink-900 bg-opacity-20 rounded-full p-1.5">
                     <div className="w-2 h-2 bg-pink-400 rounded-full" />
                   </div>
-                  <span>$300B spent annually on custom robotic solutions that rapidly become obsolete</span>
+                  <span>Operators still rely on human entry or brittle bespoke systems in high-risk access conditions</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="mt-1 flex-none bg-pink-900 bg-opacity-20 rounded-full p-1.5">
                     <div className="w-2 h-2 bg-pink-400 rounded-full" />
                   </div>
-                  <span>No platform exists for rapid development of general-purpose robotics</span>
+                  <span>Movement remains a limiting layer for field robotics, not just perception or compute</span>
                 </li>
               </ul>
             </Tile>
 
             {/* The Solution */}
             <Tile className="border-l-4 border-indigo-500">
-              <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
+              <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent">
                 The OddBotix Solution
               </h2>
               <ul className="space-y-4">
@@ -101,19 +110,19 @@ const InvestorsPage: NextPage = () => {
                   <div className="mt-1 flex-none bg-indigo-900 bg-opacity-20 rounded-full p-1.5">
                     <div className="w-2 h-2 bg-indigo-400 rounded-full" />
                   </div>
-                  <span>Generative Robotics Platform: first system to combine Large Motion Models with modular hardware</span>
+                  <span>Motion intelligence platform direction: adaptive body logic, movement policy learning, and mission-specific systems</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="mt-1 flex-none bg-indigo-900 bg-opacity-20 rounded-full p-1.5">
                     <div className="w-2 h-2 bg-indigo-400 rounded-full" />
                   </div>
-                  <span>10-100x faster development cycles vs. traditional robotics</span>
+                  <span>Systems-first roadmap that starts with the OBX family and compounds toward a reusable motion stack</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="mt-1 flex-none bg-indigo-900 bg-opacity-20 rounded-full p-1.5">
                     <div className="w-2 h-2 bg-indigo-400 rounded-full" />
                   </div>
-                  <span>Platform enables network effects through shared motion primitive libraries</span>
+                  <span>Future platform value through shared motion primitives, telemetry loops, and partner deployments</span>
                 </li>
               </ul>
             </Tile>
@@ -128,19 +137,19 @@ const InvestorsPage: NextPage = () => {
                   <div className="mt-1 flex-none bg-purple-900 bg-opacity-20 rounded-full p-1.5">
                     <div className="w-2 h-2 bg-purple-400 rounded-full" />
                   </div>
-                  <span>Advancements in transformer architectures now sufficiently robust for real-world motion prediction</span>
+                  <span>Simulation, embedded compute, sensing, and control tooling are improving at the same time</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="mt-1 flex-none bg-purple-900 bg-opacity-20 rounded-full p-1.5">
                     <div className="w-2 h-2 bg-purple-400 rounded-full" />
                   </div>
-                  <span>Enterprise appetite for automation solutions at all-time high</span>
+                  <span>Industrial, infrastructure, defense, and response teams need safer access to complex environments</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="mt-1 flex-none bg-purple-900 bg-opacity-20 rounded-full p-1.5">
                     <div className="w-2 h-2 bg-purple-400 rounded-full" />
                   </div>
-                  <span>Cost curves for key components (sensors, actuators, compute) crossing viability thresholds</span>
+                  <span>Component cost curves are making more specialized robotic systems commercially plausible</span>
                 </li>
               </ul>
             </Tile>
@@ -155,19 +164,19 @@ const InvestorsPage: NextPage = () => {
                   <div className="mt-1 flex-none bg-amber-900 bg-opacity-20 rounded-full p-1.5">
                     <div className="w-2 h-2 bg-amber-400 rounded-full" />
                   </div>
-                  <span><span className="font-medium">Enterprise Automation:</span> $180B addressable for warehouse, manufacturing, logistics</span>
+                  <span><span className="font-medium">Infrastructure Access:</span> pipes, tunnels, voids, underground networks, and hard-access facilities</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="mt-1 flex-none bg-amber-900 bg-opacity-20 rounded-full p-1.5">
                     <div className="w-2 h-2 bg-amber-400 rounded-full" />
                   </div>
-                  <span><span className="font-medium">Developer Tools:</span> $40B market hungry for next-gen robotics frameworks</span>
+                  <span><span className="font-medium">Hazard Reconnaissance:</span> remote sensing before human entry into dangerous zones</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="mt-1 flex-none bg-amber-900 bg-opacity-20 rounded-full p-1.5">
                     <div className="w-2 h-2 bg-amber-400 rounded-full" />
                   </div>
-                  <span><span className="font-medium">Data Services:</span> Proprietary motion dataset poised to become industry standard</span>
+                  <span><span className="font-medium">Motion Platform:</span> future licensing, OEM, and deployment telemetry opportunities</span>
                 </li>
               </ul>
             </Tile>
@@ -185,15 +194,15 @@ const InvestorsPage: NextPage = () => {
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
                       <span className="text-green-400">•</span>
-                      <span>Proprietary motion prediction models fine-tuned on largest robotics dataset</span>
+                      <span>Movement policies that can improve through simulation and field telemetry</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-green-400">•</span>
-                      <span>Hardware abstraction layer that reduces integration times from months to days</span>
+                      <span>Mission system taxonomy that keeps hardware, sensing, and control logic aligned</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-green-400">•</span>
-                      <span>Patent-pending neural motion compiler architecture</span>
+                      <span>Platform path from OBX systems into reusable motion intelligence infrastructure</span>
                     </li>
                   </ul>
                 </div>
@@ -202,15 +211,15 @@ const InvestorsPage: NextPage = () => {
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
                       <span className="text-green-400">•</span>
-                      <span>First-mover in generative robotics - no comparable platform exists</span>
+                      <span>Clear category focus around movement intelligence rather than generic robotics automation</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-green-400">•</span>
-                      <span>Talent density: team combines robotics PhDs with AI experts from leading labs</span>
+                      <span>Noaerth portfolio context with a disciplined deep-tech venture narrative</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-green-400">•</span>
-                      <span>Early Fortune 500 design partners creating compounding data advantage</span>
+                      <span>Partnership strategy focused on high-signal pilot environments and strategic robotics collaborators</span>
                     </li>
                   </ul>
                 </div>
@@ -222,15 +231,19 @@ const InvestorsPage: NextPage = () => {
           <section className="text-center">
             <h2 className="text-3xl font-bold mb-6">Join Us In Building The Future of Robotics</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              We're raising our Series A to accelerate platform development and enterprise deployments.
+              OddBotix is preparing strategic investor and partner conversations to advance the system family and platform roadmap.
             </p>
-            <button className="px-10 py-4 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full font-medium text-lg hover:opacity-90 transition">
+            <a
+              href="/contact"
+              className="inline-flex rounded-full bg-gradient-to-r from-indigo-500 to-blue-500 px-10 py-4 text-lg font-medium transition hover:opacity-90"
+            >
               Connect With Our Investment Team
-            </button>
+            </a>
           </section>
         </div>
       </div>
     </>
+  </>
   )
 }
 

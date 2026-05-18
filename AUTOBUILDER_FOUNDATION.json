@@ -1,0 +1,354 @@
+{
+  "schema_version": "1.0",
+  "project_folder": "/Users/joshuadavis/startups/oddbotix",
+  "startup_name": "OddBotix",
+  "aliases": ["OBX"],
+  "domain": "oddbotix.com",
+  "category": "Robotics / Motion Intelligence / Deep Tech",
+  "stage": "demo_ready",
+  "one_line_description": "Experimental robotics venture building motion-intelligent systems for environments where conventional machines fail.",
+  "target_users": [
+    "industrial infrastructure operators",
+    "defense and security teams",
+    "disaster response organizations",
+    "subterranean infrastructure operators",
+    "strategic robotics partners",
+    "deep-tech investors"
+  ],
+  "core_problem": "Conventional robots are limited by familiar movement models and fail in constrained, hazardous, irregular, subterranean, or operationally complex environments.",
+  "core_solution": "OddBotix builds mission-oriented robotic systems with abnormal locomotion, adaptive machine movement, and motion intelligence.",
+  "differentiation": "OddBotix starts from movement constraints and environment complexity rather than generic robotics archetypes, creating a motion stack that can compound through deployment telemetry and learning loops.",
+  "mvp_scope": {
+    "primary_goal": "Premium investor-ready product website showcasing the system family, platform thesis, applications, and strategic narrative.",
+    "included_features": [
+      "premium native homepage",
+      "system family page",
+      "OBX system detail pages",
+      "technology page",
+      "applications page",
+      "platform narrative",
+      "investor-facing pages",
+      "partner and contact pages",
+      "Open Graph image"
+    ],
+    "excluded_for_now": [
+      "real robotics hardware telemetry",
+      "auth dashboard",
+      "database",
+      "ecommerce",
+      "live product ordering",
+      "WebGL simulation"
+    ],
+    "future_features": [
+      "interactive system comparison",
+      "system visuals",
+      "technical diagrams",
+      "pilot inquiry workflow",
+      "investor deck export",
+      "Noaerth portfolio integration",
+      "real prototype media"
+    ]
+  },
+  "website": {
+    "primary_message": "Movement intelligence is the next control layer in robotics.",
+    "tone": "premium, technical, investor-grade, restrained, deep-tech",
+    "routes": [
+      "/",
+      "/about",
+      "/applications",
+      "/careers",
+      "/contact",
+      "/deck",
+      "/investor-memo",
+      "/investor-summary",
+      "/investors",
+      "/mission",
+      "/partners",
+      "/platform",
+      "/press",
+      "/roadmap",
+      "/systems",
+      "/systems/obx-1",
+      "/systems/obx-2",
+      "/systems/obx-3",
+      "/systems/obx-4",
+      "/systems/obx-5",
+      "/technology",
+      "/thesis",
+      "/opengraph-image"
+    ],
+    "sections": [
+      "homepage hero",
+      "OBX system family",
+      "motion intelligence thesis",
+      "technology pillars",
+      "deployment logic",
+      "applications",
+      "investor narrative",
+      "partner/contact CTAs"
+    ],
+    "cta": "Contact OddBotix / Request Access",
+    "seo_keywords": [
+      "robotics",
+      "motion intelligence",
+      "abnormal locomotion",
+      "adaptive robotics",
+      "deep tech robotics",
+      "confined-space robotics",
+      "hazard reconnaissance robotics"
+    ]
+  },
+  "product": {
+    "core_flows": [
+      "visitor understands the category thesis",
+      "visitor explores system family",
+      "visitor reviews technology and platform logic",
+      "visitor reviews applications",
+      "visitor contacts OddBotix"
+    ],
+    "demo_flows": [
+      "homepage to systems",
+      "systems to OBX detail pages",
+      "technology to platform",
+      "investors to investor memo",
+      "contact inquiry path"
+    ],
+    "data_model_notes": [],
+    "auth_required": false,
+    "database_required": false,
+    "api_required": false
+  },
+  "design_system": {
+    "visual_style": "dark cinematic premium robotics skunkworks aesthetic",
+    "colors": ["#050816", "cyan", "violet", "orange", "white transparency"],
+    "typography": "large precise sans-serif typography with strong hierarchy",
+    "layout_principles": [
+      "generous spacing",
+      "glass panels",
+      "subtle glow",
+      "precise borders",
+      "premium section endings",
+      "responsive card grids"
+    ],
+    "animation_style": "light tasteful framer-motion entrances only",
+    "avoid": [
+      "generic SaaS",
+      "dashboard UI",
+      "cheesy sci-fi",
+      "toy robotics",
+      "over-animation",
+      "missing shared imports"
+    ]
+  },
+  "technical_stack": {
+    "framework": "Next.js",
+    "language": "TypeScript",
+    "styling": "Tailwind CSS",
+    "package_manager": "pnpm",
+    "deployment": "Vercel",
+    "database": "",
+    "auth": "",
+    "apis": []
+  },
+  "important_files": {
+    "routes": [
+      "app/page.tsx",
+      "app/about/page.tsx",
+      "app/systems/page.tsx",
+      "app/systems/obx-1/page.tsx",
+      "app/systems/obx-2/page.tsx",
+      "app/systems/obx-3/page.tsx",
+      "app/systems/obx-4/page.tsx",
+      "app/systems/obx-5/page.tsx",
+      "app/technology/page.tsx",
+      "app/platform/page.tsx",
+      "app/applications/page.tsx",
+      "app/investors/page.tsx",
+      "app/contact/page.tsx",
+      "app/opengraph-image.tsx"
+    ],
+    "components": ["app/footer.tsx", "local page-level helper components"],
+    "lib": [],
+    "data": [],
+    "public_assets": [
+      "public/grid.svg",
+      "public/grid-pattern.svg",
+      "public/file.svg",
+      "public/globe.svg",
+      "public/next.svg",
+      "public/vercel.svg",
+      "public/window.svg"
+    ],
+    "config": [
+      "package.json",
+      "pnpm-lock.yaml",
+      "next.config.ts",
+      "tsconfig.json",
+      "postcss.config.mjs",
+      "eslint.config.mjs",
+      ".gitignore"
+    ]
+  },
+  "preserve": {
+    "copy": [
+      "movement intelligence category framing",
+      "OBX system family",
+      "Noaerth portfolio company positioning"
+    ],
+    "features": [
+      "premium product website",
+      "system detail pages",
+      "investor-facing narrative"
+    ],
+    "components": ["app/footer.tsx", "local BackgroundLayers helpers"],
+    "assets": ["public/grid.svg", "public/grid-pattern.svg"],
+    "technical_decisions": [
+      "self-contained page helpers",
+      "local BackgroundLayers where used",
+      "no shadcn dependency",
+      "pnpm only",
+      "no auth/database for current MVP"
+    ]
+  },
+  "do_not": {
+    "delete": [
+      "app routes",
+      "source files",
+      "pnpm-lock.yaml",
+      "Autobuilder foundation files",
+      "important public assets"
+    ],
+    "expose_publicly": [
+      "internal Autobuilder automation details",
+      "private founder information",
+      "unverified claims about real deployed hardware"
+    ],
+    "change_without_reason": [
+      "OddBotix name",
+      "OBX system taxonomy",
+      "premium dark robotics aesthetic",
+      "pnpm package manager"
+    ],
+    "build": [
+      "generic SaaS dashboard",
+      "consumer toy robot app",
+      "unrelated Noaerth automation content"
+    ],
+    "drift_toward": [
+      "generic portfolio page",
+      "fake enterprise dashboard",
+      "vague AI startup",
+      "playful robot mascot brand"
+    ]
+  },
+  "autobuilder_strategy": {
+    "north_star": "Make OddBotix feel like a credible motion-intelligence robotics venture with a concrete system family and platform path.",
+    "quality_bar": "Premium, investor-ready, technically credible, build-green.",
+    "next_priorities": [
+      "add product visuals and system comparison sections",
+      "create Tailwind-only diagrams for technology and platform pages",
+      "standardize OBX detail page templates",
+      "add real prototype media when available"
+    ],
+    "safe_improvement_types": [
+      "copy tightening",
+      "system detail refinement",
+      "metadata improvements",
+      "navigation polish",
+      "CTA consistency",
+      "visual hierarchy improvements"
+    ],
+    "unsafe_improvement_types": [
+      "adding missing UI libraries",
+      "inventing shared imports",
+      "adding auth/database prematurely",
+      "fake hardware claims",
+      "automatic deployment",
+      "massive redesign without need"
+    ],
+    "preferred_task_size": "medium",
+    "build_frequency_guidance": "Run pnpm build after each meaningful page or route change.",
+    "deployment_guidance": "manual_vercel_only"
+  },
+  "cleanup_policy": {
+    "safe_to_delete": [
+      "node_modules",
+      ".next",
+      ".turbo",
+      ".vercel/cache",
+      "dist",
+      "build",
+      "coverage",
+      "playwright-report",
+      "test-results",
+      ".cache",
+      ".parcel-cache",
+      "*.log",
+      ".DS_Store"
+    ],
+    "must_preserve": [
+      "app",
+      "public assets used by site",
+      "package.json",
+      "pnpm-lock.yaml",
+      "config files",
+      "RECOVERY_NOTES.md",
+      "AUTOBUILDER_FOUNDATION.json",
+      ".autobuilder",
+      ".env.example",
+      ".env.local",
+      ".git"
+    ],
+    "large_file_review_paths": [
+      "public",
+      "assets",
+      "media",
+      "content",
+      "data",
+      "docs",
+      ".autobuilder"
+    ],
+    "post_build_cleanup_commands": [
+      "rm -rf node_modules .next .turbo .vercel/cache dist build coverage playwright-report test-results .cache .parcel-cache",
+      "find . -name \".DS_Store\" -type f -delete",
+      "find . -name \"*.log\" -type f -delete",
+      "find . -type d -empty -delete"
+    ]
+  },
+  "last_recovery_summary": {
+    "date": "2026-05-07",
+    "restored": [
+      "native homepage replacing external iframe",
+      "build-green Next.js App Router site",
+      "Autobuilder foundation memory"
+    ],
+    "improved": [
+      "homepage product positioning",
+      "OBX system detail copy",
+      "press, investor, careers, roadmap, and deck truthfulness",
+      "metadata and Turbopack root handling",
+      "CTA consistency"
+    ],
+    "fixed": [
+      "lint errors",
+      "typecheck validation",
+      "missing grid assets",
+      "package manager lockfile state",
+      "unused backend dependency"
+    ],
+    "removed": [
+      "node_modules",
+      ".next",
+      "unused Supabase dependency",
+      "unused Supabase client",
+      "placeholder checkout API route",
+      "generated caches and logs"
+    ],
+    "remaining_risks": [
+      "OBX detail pages should be standardized into one premium visual system",
+      "site still needs real prototype media or clearly labeled concept visuals",
+      "contact flow is mailto/static rather than a structured inquiry workflow",
+      "Open Graph image is functional but could be visually richer"
+    ]
+  }
+}

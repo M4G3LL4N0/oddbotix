@@ -1,12 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   --background: #050816;
   --foreground: #ffffff;
-  --primary: #007bff;
-  --primary-hover: #0056b3;
 }
 
 * {
@@ -14,20 +10,27 @@
 }
 
 html {
+  width: 100%;
+  min-height: 100%;
   scroll-behavior: smooth;
+  background: var(--background);
 }
 
-html,
 body {
   margin: 0;
-  padding: 0;
+  width: 100%;
   min-height: 100%;
+  overflow-x: hidden;
   background: var(--background);
   color: var(--foreground);
-  font-family: "Inter", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+main {
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -41,4 +44,48 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.28);
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  header nav {
+    display: none !important;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 12vw, 4.75rem) !important;
+    line-height: 0.95 !important;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 8vw, 3.5rem) !important;
+    line-height: 1.05 !important;
+  }
+}
+
+@media (max-width: 430px) {
+  [class*="px-6"] {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  [class*="p-10"] {
+    padding: 1.5rem !important;
+  }
+
+  [class*="p-8"] {
+    padding: 1.25rem !important;
+  }
 }

@@ -1,3 +1,4 @@
+import { SubpageVisual } from "@/components/SubpageVisual";
 const BackgroundLayers = () => (
   <div className="fixed inset-0 -z-10">
     <div className="absolute inset-0 bg-gradient-to-b from-black to-gray-900" />
@@ -7,7 +8,9 @@ const BackgroundLayers = () => (
 
 export default function InvestorMemo() {
   return (
-    <div className="min-h-screen text-white font-sans">
+      <>
+      <SubpageVisual variant="default" />
+      <div className="min-h-screen text-white font-sans">
       <BackgroundLayers />
       
       <div className="container mx-auto px-4 py-24 max-w-3xl space-y-24">
@@ -40,7 +43,7 @@ export default function InvestorMemo() {
         <section>
           <h3 className="text-2xl font-bold mb-4">Our Solution</h3>
           <p className="text-gray-300 leading-relaxed">
-            OddBotix combines advanced motion intelligence with adaptive systems, creating robots that thrive where others fail. Our approach redefines what's possible in robotic movement and interaction.
+            OddBotix combines motion intelligence with adaptive systems, creating a path toward robots that can operate where conventional movement assumptions break down.
           </p>
         </section>
 
@@ -49,7 +52,7 @@ export default function InvestorMemo() {
           <h3 className="text-2xl font-bold mb-4">Why Now</h3>
           <ul className="text-gray-300 list-disc list-inside space-y-2">
             <li>Simulation technologies enable rapid iteration</li>
-            <li>AI breakthroughs in control systems</li>
+            <li>AI and control advances make adaptive movement more practical</li>
             <li>Hardware maturity reaches inflection point</li>
           </ul>
         </section>
@@ -98,5 +101,6 @@ export default function InvestorMemo() {
         </section>
       </div>
     </div>
-  );
+  </>
+  )
 }
