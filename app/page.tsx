@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { HeroProductPanel } from "@/components/HeroProductPanel";
-import { MarketingGraphicsStack } from "@/components/MarketingGraphicsStack";
 import { TrustStrip } from "@/components/TrustStrip";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -351,11 +349,6 @@ export default function Page() {
       </section>
 
       <Footer />
-    <MarketingGraphicsStack />
-      <section className="mx-auto max-w-7xl px-4 pb-12 pt-4 sm:px-6 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
-        <div />
-        <HeroProductPanel />
-      </section>
     </main>
   );
 }
